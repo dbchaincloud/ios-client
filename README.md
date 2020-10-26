@@ -1,3 +1,2 @@
-# DBChainKit
-
-A description of this package.
+# ios-client
+iOS client for dbchain
