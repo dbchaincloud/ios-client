@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "f96b619bcb2383b43d898402283924b80e2c4bae",
+          "version": "5.4.3"
+        }
+      },
+      {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": "master",
+          "revision": "bdfc481d79e3204480d1a9bee4c12f66b84a4b5d",
+          "version": null
+        }
+      },
+      {
+        "package": "SawtoothSigning",
+        "repositoryURL": "https://github.com/hyperledger/sawtooth-sdk-swift.git",
+        "state": {
+          "branch": "main",
+          "revision": "57d9a0f234569066e6405bfb58a8fa6d87bd4348",
+          "version": null
+        }
+      },
+      {
+        "package": "secp256k1",
+        "repositoryURL": "https://github.com/Boilertalk/secp256k1.swift",
+        "state": {
+          "branch": null,
+          "revision": "823281fe9def21b384099b72a9a53ca988317b20",
+          "version": "0.1.4"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
