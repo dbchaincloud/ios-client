@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Alamofire
 
-open class InsertDara :NSObject {
+open class DBInsertDara :NSObject {
 
     public var appcode :String
     public var publikeyBase64Str :String
@@ -49,7 +49,6 @@ open class InsertDara :NSObject {
     public func insertRowSortedSignDic(model:UserModel,fields : [String:Any],insertStatusBlock:@escaping(_ status:String) -> Void){
 
         let fieldsStr = fields.dicValueString(fields)
-
         let fieldsData = Data(fieldsStr!.utf8)
         let fieldBase = fieldsData.base64EncodedString()
 
@@ -69,7 +68,6 @@ open class InsertDara :NSObject {
                                        "msgs":msgArr,
                                        "sequence":model.result.value.sequence]
 
-
         let str = signDiv.dicValueString(signDiv)
         var replacStr = str!.replacingOccurrences(of: "dbchain\\/InsertRow", with: "dbchain/InsertRow")
         replacStr = replacStr.replacingOccurrences(of: "\\/", with: "/")
@@ -86,38 +84,36 @@ open class InsertDara :NSObject {
      }
 
     ///  冻结数据
-    public func trashcanRowSortedSignDic(model:UserModel,deleteID:String,insertStatusBlock:@escaping(_ status:String) -> Void){
+    public func trashcanRowSortedSignDic(model: UserModel,deleteID: String,insertStatusBlock: @escaping(_ status:String) -> Void){
 
-         let valueDic:[String:Any] = ["app_code":appcode,
-                                      "owner":address,
-                                      "id":deleteID,
-                                      "table_name":tableName]
+         let valueDic:[String:Any] = ["app_code": appcode,
+                                      "owner": address,
+                                      "id": deleteID,
+                                      "table_name": tableName]
 
-         let msgDic:[String:Any] = ["type":"dbchain/FreezeRow",
-                                    "value":valueDic]
+         let msgDic:[String:Any] = ["type": "dbchain/FreezeRow",
+                                    "value": valueDic]
 
          msgArr.append(msgDic)
 
-         let signDiv : [String:Any] = ["account_number":model.result.value.account_number,
-                                       "chain_id":chainid,
-                                       "fee":fee,
-                                       "memo":"",
-                                       "msgs":msgArr,
-                                       "sequence":model.result.value.sequence]
+         let signDiv : [String:Any] = ["account_number": model.result.value.account_number,
+                                       "chain_id": chainid,
+                                       "fee": fee,
+                                       "memo": "",
+                                       "msgs": msgArr,
+                                       "sequence": model.result.value.sequence]
 
          // 排序方法只对value进行,所以在外层包裹一层
          let signDivSorted = ["key":signDiv]
 
-//         let sortSignDiv = SortedDict().sortedDictionary(byLowercaseString: signDivSorted)
-        let sortSignDiv = sortedDictionarybyLowercaseString(dic: signDivSorted)
+         let sortSignDiv = sortedDictionarybyLowercaseString(dic: signDivSorted)
 
-        if(sortSignDiv.count > 0 ){
+         if (sortSignDiv.count > 0 ) {
             let sorted = sortSignDiv.sorted {($0 as AnyObject).key! < ($1 as AnyObject).key!}
              for element in sorted {
                 let elementDic : Dictionary = element 
                 let str = elementDic.creatJsonString(dict: elementDic)
                 let str8 = [UInt8](str.utf8)
-
                 do {
                     let signData = try signSawtoothSigning(data: str8, privateKey: privateKeyDataUint)
                     insertRowData(baseUrlStr: insertDataUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
@@ -190,34 +186,33 @@ open class InsertDara :NSObject {
     ///   - appcode: appcode
     ///   - chainid: chainid
     ///   - insertStatusBlock: 结果
-    public func functionSignDicArr(baseUrlStr:String,PrivateKeyDataUint:[UInt8],publikeyBase:String,model:UserModel,signArgumentsAndFunctionNames:[String:String],address:String,appcode:String,chainid:String,insertStatusBlock:@escaping(_ status:String) -> Void){
+    public func functionSignDicArr(baseUrlStr: String,PrivateKeyDataUint: [UInt8],publikeyBase: String,model: UserModel,signArgumentsAndFunctionNames: [String:String],address: String,appcode: String,chainid: String,insertStatusBlock: @escaping(_ status:String) -> Void){
 
-            for (signStr,funtionName) in signArgumentsAndFunctionNames {
-                let signvalueDic:[String:Any] = ["app_code":appcode,
-                                                 "owner":address,
-                                                 "argument":signStr,
-                                                 "function_name":funtionName]
+        for (signStr,funtionName) in signArgumentsAndFunctionNames {
+            let signvalueDic:[String:Any] = ["app_code": appcode,
+                                             "owner": address,
+                                             "argument": signStr,
+                                             "function_name": funtionName]
 
-                let signmsgDic:[String:Any] = ["type":"dbchain/CallFunction",
-                                               "value":signvalueDic]
-                self.msgArr.append(signmsgDic)
-            }
-            let signDiv : [String:Any] = ["account_number":model.result.value.account_number,
-                                          "chain_id":chainid,
-                                          "fee":self.fee,
-                                          "memo":"",
-                                          "msgs":self.msgArr,
-                                          "sequence":model.result.value.sequence]
+            let signmsgDic:[String:Any] = ["type": "dbchain/CallFunction",
+                                           "value": signvalueDic]
+            self.msgArr.append(signmsgDic)
+        }
+        let signDiv : [String:Any] = ["account_number": model.result.value.account_number,
+                                      "chain_id": chainid,
+                                      "fee": self.fee,
+                                      "memo": "",
+                                      "msgs": self.msgArr,
+                                      "sequence": model.result.value.sequence]
 
-            let str = signDiv.dicValueString(signDiv)
+        let str = signDiv.dicValueString(signDiv)
 
-            var replacStr = str!.replacingOccurrences(of: "dbchain\\/CallFunction", with: "dbchain/CallFunction")
-            replacStr = replacStr.replacingOccurrences(of: "\\/", with: "/")
+        var replacStr = str!.replacingOccurrences(of: "dbchain\\/CallFunction", with: "dbchain/CallFunction")
+        replacStr = replacStr.replacingOccurrences(of: "\\/", with: "/")
 
-            let str8 = [UInt8](replacStr.utf8)
+        let str8 = [UInt8](replacStr.utf8)
         do {
             let signData = try signSawtoothSigning(data: str8, privateKey: PrivateKeyDataUint)
-
             insertRowData(baseUrlStr: baseUrlStr, publikeyBase: publikeyBase, signature: signData) { (status) in
                 insertStatusBlock(status)
             }
@@ -225,7 +220,6 @@ open class InsertDara :NSObject {
         } catch {
             insertStatusBlock("0")
         }
-
      }
 
 
@@ -250,14 +244,14 @@ open class InsertDara :NSObject {
             replacStr = replacStr.replacingOccurrences(of: "\\/", with: "/")
 
             let str8 = [UInt8](replacStr.utf8)
-        do {
-            let signData = try signSawtoothSigning(data: str8, privateKey: PrivateKeyDataUint)
-            insertRowData(baseUrlStr: baseUrlStr, publikeyBase: publikeyBase, signature: signData) { (status) in
-                insertStatusBlock(status)
+            do {
+                let signData = try signSawtoothSigning(data: str8, privateKey: PrivateKeyDataUint)
+                insertRowData(baseUrlStr: baseUrlStr, publikeyBase: publikeyBase, signature: signData) { (status) in
+                    insertStatusBlock(status)
+                }
+            } catch {
+                insertStatusBlock("0")
             }
-        } catch {
-            insertStatusBlock("0")
-        }
      }
 
 

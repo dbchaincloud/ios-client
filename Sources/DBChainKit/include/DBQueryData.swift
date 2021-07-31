@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Query {
+public struct DBQuery {
 
     public init() { }
     
@@ -114,7 +114,6 @@ public struct Query {
 
 // 字典|数组 转Data
 public func ObjectToData(object: Any) -> Data? {
-
     do {
         return try JSONSerialization.data(withJSONObject: object, options: []);
     } catch {
