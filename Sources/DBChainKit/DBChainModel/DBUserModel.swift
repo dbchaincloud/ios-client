@@ -9,7 +9,7 @@ import Foundation
 
 public class DBUserModel:NSObject, Codable {
 
-    public init () {}
+//    public override init () {}
 
     public var height: String
     public var result: resultModel

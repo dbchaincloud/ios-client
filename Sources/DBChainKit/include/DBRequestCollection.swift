@@ -21,9 +21,9 @@ public struct DBRequestCollection {
         DBRequest.GET(url: urlStr, params: nil) { (jsonData) in
             let str = String(data: jsonData, encoding: .utf8)!
             do {
-                let insertModel = try JSONDecoder().decode(DBUserModel.self, from: jsonData)
+                let model = try JSONDecoder().decode(DBUserModel.self, from: jsonData)
                 DispatchQueue.main.async {
-                    DBUserModelCloure(insertModel)
+                    DBUserModelCloure(model)
                 }
             } catch {
                 failure?(201,"获取用户信息转换失败: \(error)")

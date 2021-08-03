@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 import Alamofire
 
-open class DBInsertDara :NSObject {
+/// 插入数据
+open class DBInsertRequest :NSObject {
 
     public var appcode :String
     public var publikeyBase64Str :String
@@ -24,25 +25,25 @@ open class DBInsertDara :NSObject {
     // 准备签名数据
     let fee : [String:Any] = ["amount":[],"gas":"99999999"]
 
-    public init(appcode: String,
-                publikeyBase64Str: String,
+    public init(baseUrl: String,
+                appcode: String,
                 address: String,
-                tableName: String,
                 chainid: String,
+                tableName: String,
                 privateKeyDataUint: [UInt8],
-                baseUrl: String,
                 publicKey: String,
                 insertDataUrl: String) {
 
         self.appcode = appcode
         self.address = address
-        self.publikeyBase64Str = publikeyBase64Str
         self.tableName = tableName
         self.chainid = chainid
         self.privateKeyDataUint = privateKeyDataUint
         self.baseUrl = baseUrl
         self.publicKey = publicKey
         self.insertDataUrl = insertDataUrl
+        /// 公钥 的 Base64
+        publikeyBase64Str = publicKey.hexaData.base64EncodedString()
     }
 
     /// 插入数据
@@ -73,7 +74,8 @@ open class DBInsertDara :NSObject {
         replacStr = replacStr.replacingOccurrences(of: "\\/", with: "/")
 
          let str8 = [UInt8](replacStr.utf8)
-        do {
+         do {
+
             let signData = try signSawtoothSigning(data: str8, privateKey: privateKeyDataUint)
             insertRowData(baseUrlStr: insertDataUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
                 insertStatusBlock(status)
@@ -149,22 +151,22 @@ open class DBInsertDara :NSObject {
 
          let signmsgDic:[String:Any] = ["type":"dbchain/CallFunction",
                                         "value":signvalueDic]
-        msgArr.append(signmsgDic)
+         msgArr.append(signmsgDic)
 
-        let signDiv : [String:Any] = ["account_number":model.result.value.account_number,
+         let signDiv : [String:Any] = ["account_number":model.result.value.account_number,
                                       "chain_id":chainid,
                                       "fee":fee,
                                       "memo":"",
                                       "msgs":msgArr,
                                       "sequence":model.result.value.sequence]
 
-        let str = signDiv.dicValueString(signDiv)
+         let str = signDiv.dicValueString(signDiv)
 
-        var replacStr = str!.replacingOccurrences(of: "dbchain\\/CallFunction", with: "dbchain/CallFunction")
-        replacStr = replacStr.replacingOccurrences(of: "\\/", with: "/")
+         var replacStr = str!.replacingOccurrences(of: "dbchain\\/CallFunction", with: "dbchain/CallFunction")
+         replacStr = replacStr.replacingOccurrences(of: "\\/", with: "/")
 
-        let str8 = [UInt8](replacStr.utf8)
-        do {
+         let str8 = [UInt8](replacStr.utf8)
+         do {
             let signData = try signSawtoothSigning(data: str8, privateKey: PrivateKeyDataUint)
 //            let verifyStr = try verifySawtoothSigning(signature: signData.hex, data: str8, publicKey:PublikeyData.bytes)
             insertRowData(baseUrlStr: baseUrlStr, publikeyBase: publikeyBase, signature: signData) { (status) in
@@ -290,11 +292,11 @@ open class DBInsertDara :NSObject {
         let dataSort = sortedDictionarybyLowercaseString(dic: ["key": ["mode":"async","tx":sortTX[0]]])
 
         let isTimerExistence = DBGCDTimer.shared.isExistTimer(WithTimerName: "VerificationHash")
-        
+
         DBRequest.POST(url: baseUrlStr, params:( dataSort[0] )) { [self] (json) in
             
              let decoder = JSONDecoder()
-             let insertModel = try? decoder.decode(InsertModel.self, from: json)
+             let insertModel = try? decoder.decode(DBInsertModel.self, from: json)
              guard let model = insertModel else {
                 insertDataStatusBlock("0")
                  return
