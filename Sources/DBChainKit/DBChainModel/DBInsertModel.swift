@@ -6,7 +6,7 @@
 //
 
 import Foundation
-public struct InsertModel: Codable {
+public struct DBInsertModel: Codable {
     public var height: String?
     public var txhash: String?
 

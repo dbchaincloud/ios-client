@@ -46,7 +46,7 @@ open class DBInsertDara :NSObject {
     }
 
     /// 插入数据
-    public func insertRowSortedSignDic(model:UserModel,fields : [String:Any],insertStatusBlock:@escaping(_ status:String) -> Void){
+    public func insertRowSortedSignDic(model:DBUserModel,fields : [String:Any],insertStatusBlock:@escaping(_ status:String) -> Void){
 
         let fieldsStr = fields.dicValueString(fields)
         let fieldsData = Data(fieldsStr!.utf8)
@@ -84,7 +84,7 @@ open class DBInsertDara :NSObject {
      }
 
     ///  冻结数据
-    public func trashcanRowSortedSignDic(model: UserModel,deleteID: String,insertStatusBlock: @escaping(_ status:String) -> Void){
+    public func trashcanRowSortedSignDic(model: DBUserModel,deleteID: String,insertStatusBlock: @escaping(_ status:String) -> Void){
 
          let valueDic:[String:Any] = ["app_code": appcode,
                                       "owner": address,
@@ -132,7 +132,7 @@ open class DBInsertDara :NSObject {
 
     ///  函数请求
     /// - Parameters:
-    ///   - model: usermodel
+    ///   - model: DBUserModel
     ///   - argument: 多条数据请求的字符串 格式:
     ///      ["tableName__表名"," 第一条数据的字符串数组排列",  " 第二条数据的字符串数组排列 ",.......]
     ///   - address: 地址
@@ -140,7 +140,7 @@ open class DBInsertDara :NSObject {
     ///   - appcode: appcode
     ///   - chainid: chainid
     ///   - insertStatusBlock: 结果
-    public func functionSignDic(baseUrlStr:String,PrivateKeyDataUint:[UInt8],publikeyBase:String,model:UserModel,signArgument:String,address:String,function_name:String,appcode:String,chainid:String,insertStatusBlock:@escaping(_ status:String) -> Void){
+    public func functionSignDic(baseUrlStr:String,PrivateKeyDataUint:[UInt8],publikeyBase:String,model:DBUserModel,signArgument:String,address:String,function_name:String,appcode:String,chainid:String,insertStatusBlock:@escaping(_ status:String) -> Void){
 
          let signvalueDic:[String:Any] = ["app_code":appcode,
                                           "owner":address,
@@ -178,7 +178,7 @@ open class DBInsertDara :NSObject {
 
     ///  函数请求  多条数据打包格式
     /// - Parameters:
-    ///   - model: usermodel
+    ///   - model: DBUserModel
     ///   - argument: 多条数据请求的字符串 格式:
     ///      ["tableName__表名"," 第一条数据的字符串数组排列",  " 第二条数据的字符串数组排列 ",.......]
     ///   - address: 地址
@@ -186,7 +186,7 @@ open class DBInsertDara :NSObject {
     ///   - appcode: appcode
     ///   - chainid: chainid
     ///   - insertStatusBlock: 结果
-    public func functionSignDicArr(baseUrlStr: String,PrivateKeyDataUint: [UInt8],publikeyBase: String,model: UserModel,signArgumentsAndFunctionNames: [String:String],address: String,appcode: String,chainid: String,insertStatusBlock: @escaping(_ status:String) -> Void){
+    public func functionSignDicArr(baseUrlStr: String,PrivateKeyDataUint: [UInt8],publikeyBase: String,model: DBUserModel,signArgumentsAndFunctionNames: [String:String],address: String,appcode: String,chainid: String,insertStatusBlock: @escaping(_ status:String) -> Void){
 
         for (signStr,funtionName) in signArgumentsAndFunctionNames {
             let signvalueDic:[String:Any] = ["app_code": appcode,
@@ -228,7 +228,7 @@ open class DBInsertDara :NSObject {
     ///   - model: 用户模型
     ///   - msgObjectArr: 打包的数据, 字典数组类型
     ///   - insertStatusBlock: 回调
-    public func functionSignMsgObjectArr(baseUrlStr:String,PrivateKeyDataUint:[UInt8],publikeyBase:String,model:UserModel,address:String,appcode:String,Chainid:String,msgObjectArr:[Dictionary<String, Any>],insertStatusBlock:@escaping(_ status:String) -> Void){
+    public func functionSignMsgObjectArr(baseUrlStr:String,PrivateKeyDataUint:[UInt8],publikeyBase:String,model:DBUserModel,address:String,appcode:String,Chainid:String,msgObjectArr:[Dictionary<String, Any>],insertStatusBlock:@escaping(_ status:String) -> Void){
 
             self.msgArr = msgObjectArr
             let signDiv : [String:Any] = ["account_number":model.result.value.account_number,
