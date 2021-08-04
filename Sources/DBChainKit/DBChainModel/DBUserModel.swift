@@ -15,25 +15,25 @@ public class DBUserModel:NSObject, Codable {
     public var result: resultModel
 
     public struct resultModel: Codable {
-        var type: String
-        var value: valueData
+        public var type: String
+        public var value: valueData
     }
 
     public struct valueData: Codable {
-        var address: String
-        var coins: [coinData]?
-        var public_key: publicData?
-        var account_number: String
-        var sequence: String
+        public var address: String
+        public var coins: [coinData]?
+        public var public_key: publicData?
+        public var account_number: String
+        public var sequence: String
     }
 
     public struct publicData: Codable {
-        var type: String
-        var value: String
+        public var type: String
+        public var value: String
     }
 
     public struct coinData: Codable {
-        var denom: String
-        var amount: String
+        public var denom: String
+        public var amount: String
     }
 }

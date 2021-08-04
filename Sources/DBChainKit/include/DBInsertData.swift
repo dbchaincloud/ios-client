@@ -135,14 +135,17 @@ open class DBInsertRequest :NSObject {
     ///  函数请求
     /// - Parameters:
     ///   - model: DBUserModel
-    ///   - argument: 多条数据请求的字符串 格式:
+    ///   - signArgument: 多条数据请求的字符串 格式:
     ///      ["tableName__表名"," 第一条数据的字符串数组排列",  " 第二条数据的字符串数组排列 ",.......]
     ///   - address: 地址
     ///   - function_name: 函数名称
     ///   - appcode: appcode
     ///   - chainid: chainid
     ///   - insertStatusBlock: 结果
-    public func functionSignDic(baseUrlStr:String,PrivateKeyDataUint:[UInt8],publikeyBase:String,model:DBUserModel,signArgument:String,address:String,function_name:String,appcode:String,chainid:String,insertStatusBlock:@escaping(_ status:String) -> Void){
+    public func functionSignDic(model:DBUserModel,
+                                signArgument:String,
+                                function_name:String,
+                                insertStatusBlock:@escaping(_ status:String) -> Void){
 
          let signvalueDic:[String:Any] = ["app_code":appcode,
                                           "owner":address,
@@ -167,9 +170,9 @@ open class DBInsertRequest :NSObject {
 
          let str8 = [UInt8](replacStr.utf8)
          do {
-            let signData = try signSawtoothSigning(data: str8, privateKey: PrivateKeyDataUint)
+            let signData = try signSawtoothSigning(data: str8, privateKey: privateKeyDataUint)
 //            let verifyStr = try verifySawtoothSigning(signature: signData.hex, data: str8, publicKey:PublikeyData.bytes)
-            insertRowData(baseUrlStr: baseUrlStr, publikeyBase: publikeyBase, signature: signData) { (status) in
+            insertRowData(baseUrlStr: baseUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
                 insertStatusBlock(status)
             }
         } catch {
@@ -188,7 +191,9 @@ open class DBInsertRequest :NSObject {
     ///   - appcode: appcode
     ///   - chainid: chainid
     ///   - insertStatusBlock: 结果
-    public func functionSignDicArr(baseUrlStr: String,PrivateKeyDataUint: [UInt8],publikeyBase: String,model: DBUserModel,signArgumentsAndFunctionNames: [String:String],address: String,appcode: String,chainid: String,insertStatusBlock: @escaping(_ status:String) -> Void){
+    public func functionSignDicArr(model: DBUserModel,
+                                   signArgumentsAndFunctionNames: [String:String],
+                                   insertStatusBlock: @escaping(_ status:String) -> Void){
 
         for (signStr,funtionName) in signArgumentsAndFunctionNames {
             let signvalueDic:[String:Any] = ["app_code": appcode,
@@ -214,8 +219,8 @@ open class DBInsertRequest :NSObject {
 
         let str8 = [UInt8](replacStr.utf8)
         do {
-            let signData = try signSawtoothSigning(data: str8, privateKey: PrivateKeyDataUint)
-            insertRowData(baseUrlStr: baseUrlStr, publikeyBase: publikeyBase, signature: signData) { (status) in
+            let signData = try signSawtoothSigning(data: str8, privateKey: privateKeyDataUint)
+            insertRowData(baseUrlStr: baseUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
                 insertStatusBlock(status)
             }
 
@@ -230,11 +235,12 @@ open class DBInsertRequest :NSObject {
     ///   - model: 用户模型
     ///   - msgObjectArr: 打包的数据, 字典数组类型
     ///   - insertStatusBlock: 回调
-    public func functionSignMsgObjectArr(baseUrlStr:String,PrivateKeyDataUint:[UInt8],publikeyBase:String,model:DBUserModel,address:String,appcode:String,Chainid:String,msgObjectArr:[Dictionary<String, Any>],insertStatusBlock:@escaping(_ status:String) -> Void){
-
+    public func functionSignMsgObjectArr(model:DBUserModel,
+                                         msgObjectArr:[Dictionary<String, Any>],
+                                         insertStatusBlock:@escaping(_ status:String) -> Void){
             self.msgArr = msgObjectArr
             let signDiv : [String:Any] = ["account_number":model.result.value.account_number,
-                                          "chain_id":Chainid,
+                                          "chain_id":chainid,
                                           "fee":self.fee,
                                           "memo":"",
                                           "msgs":msgObjectArr,
@@ -247,8 +253,8 @@ open class DBInsertRequest :NSObject {
 
             let str8 = [UInt8](replacStr.utf8)
             do {
-                let signData = try signSawtoothSigning(data: str8, privateKey: PrivateKeyDataUint)
-                insertRowData(baseUrlStr: baseUrlStr, publikeyBase: publikeyBase, signature: signData) { (status) in
+                let signData = try signSawtoothSigning(data: str8, privateKey: privateKeyDataUint)
+                insertRowData(baseUrlStr: baseUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
                     insertStatusBlock(status)
                 }
             } catch {
@@ -268,7 +274,10 @@ open class DBInsertRequest :NSObject {
     ///   返回 0  表示查询结果的倒计时结束, 数据插入不成功.
     ///   返回 1  表示数据已成功插入数据库
     ///   返回 2  表示该条数据插入的结果还处于等待状态.
-     func insertRowData(baseUrlStr:String,publikeyBase:String ,signature: Data,insertDataStatusBlock:@escaping(_ Status:String) -> Void) {
+    func insertRowData(baseUrlStr:String,
+                       publikeyBase:String,
+                        signature: Data,
+                        insertDataStatusBlock:@escaping(_ Status:String) -> Void) {
 
         let sign = signature.base64EncodedString()
 
