@@ -125,8 +125,12 @@ public enum ChainType: String {
     }
 }
 
-
-func getPubToDpAddress(_ pubHex:Data, _ chain:ChainType) -> String {
+/// 获取地址
+/// - Parameters:
+///   - pubHex: 公钥哈希
+///   - chain: chain 类型
+/// - Returns: 返回地址
+public func DBGetPubToDpAddress(_ pubHex:Data, _ chain:ChainType) -> String {
    let pub = [UInt8](pubHex)
    var result = ""
    let sha256 = Digest.sha256(pub)

@@ -16,7 +16,7 @@ public struct DBMnemonicManager {
     /// - Returns: 返回公钥私钥地址字符串
     public func MnemonicGetPrivateKeyStrAndPublickStrWithMnemonicArr(_ mnemonicArr: [String]) -> (publicKeyString:String,privateKeyString:String,privateKeyUint:[UInt8],address:String) {
         guard mnemonicArr.count == 12 else {
-            assert(mnemonicArr.count != 12, "PLEASE PASS IN A STRING ARRAY OF 12 English words,English Comma Separated")
+            assert(mnemonicArr.count != 12, "PLEASE INPUT IN A STRING ARRAY OF 12 English words,English Comma Separated")
             return ("","",[],"")
         }
         /// 生成助记词
@@ -35,11 +35,9 @@ public struct DBMnemonicManager {
         let dbPrivateKey = change.derived(at: .notHardened(0))
         // ************  公钥  *************
         let publikey = PublicKey(privateKey: dbPrivateKey.raw, coin: .bitcoin)
-
-        let address = getPubToDpAddress(publikey.data, ChainType.COSMOS_MAIN)
+        let address = DBGetPubToDpAddress(publikey.data, ChainType.COSMOS_MAIN)
 
         return (publikey.data.toHexString(),dbPrivateKey.raw.toHexString(),[UInt8](dbPrivateKey.raw),address)
-
     }
 
 }

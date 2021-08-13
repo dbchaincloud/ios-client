@@ -25,7 +25,7 @@ open class DBInsertRequest :NSObject {
     // 准备签名数据
     let fee : [String:Any] = ["amount":[],"gas":"99999999"]
 
-    public init(baseUrl: String,
+    required public init(baseUrl: String,
                 appcode: String,
                 address: String,
                 chainid: String,
@@ -77,7 +77,7 @@ open class DBInsertRequest :NSObject {
          do {
 
             let signData = try signSawtoothSigning(data: str8, privateKey: privateKeyDataUint)
-            insertRowData(baseUrlStr: insertDataUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
+            insertRowData(insertUrlStr: insertDataUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
                 insertStatusBlock(status)
             }
         } catch {
@@ -118,7 +118,7 @@ open class DBInsertRequest :NSObject {
                 let str8 = [UInt8](str.utf8)
                 do {
                     let signData = try signSawtoothSigning(data: str8, privateKey: privateKeyDataUint)
-                    insertRowData(baseUrlStr: insertDataUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
+                    insertRowData(insertUrlStr: insertDataUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
                         insertStatusBlock(status)
                     }
                 } catch {
@@ -172,7 +172,7 @@ open class DBInsertRequest :NSObject {
          do {
             let signData = try signSawtoothSigning(data: str8, privateKey: privateKeyDataUint)
 //            let verifyStr = try verifySawtoothSigning(signature: signData.hex, data: str8, publicKey:PublikeyData.bytes)
-            insertRowData(baseUrlStr: baseUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
+            insertRowData(insertUrlStr: insertDataUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
                 insertStatusBlock(status)
             }
         } catch {
@@ -220,7 +220,7 @@ open class DBInsertRequest :NSObject {
         let str8 = [UInt8](replacStr.utf8)
         do {
             let signData = try signSawtoothSigning(data: str8, privateKey: privateKeyDataUint)
-            insertRowData(baseUrlStr: baseUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
+            insertRowData(insertUrlStr: insertDataUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
                 insertStatusBlock(status)
             }
 
@@ -254,7 +254,7 @@ open class DBInsertRequest :NSObject {
             let str8 = [UInt8](replacStr.utf8)
             do {
                 let signData = try signSawtoothSigning(data: str8, privateKey: privateKeyDataUint)
-                insertRowData(baseUrlStr: baseUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
+                insertRowData(insertUrlStr: insertDataUrl, publikeyBase: publikeyBase64Str, signature: signData) { (status) in
                     insertStatusBlock(status)
                 }
             } catch {
@@ -274,7 +274,7 @@ open class DBInsertRequest :NSObject {
     ///   返回 0  表示查询结果的倒计时结束, 数据插入不成功.
     ///   返回 1  表示数据已成功插入数据库
     ///   返回 2  表示该条数据插入的结果还处于等待状态.
-    func insertRowData(baseUrlStr:String,
+    func insertRowData(insertUrlStr:String,
                        publikeyBase:String,
                         signature: Data,
                         insertDataStatusBlock:@escaping(_ Status:String) -> Void) {
@@ -302,7 +302,7 @@ open class DBInsertRequest :NSObject {
 
         let isTimerExistence = DBGCDTimer.shared.isExistTimer(WithTimerName: "VerificationHash")
 
-        DBRequest.POST(url: baseUrlStr, params:( dataSort[0] )) { [self] (json) in
+        DBRequest.POST(url: insertUrlStr, params:( dataSort[0] )) { [self] (json) in
             
              let decoder = JSONDecoder()
              let insertModel = try? decoder.decode(DBInsertModel.self, from: json)
