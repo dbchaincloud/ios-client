@@ -176,7 +176,7 @@ open class DBInsertRequest :NSObject {
                 insertStatusBlock(status)
             }
         } catch {
-            insertStatusBlock("1")
+            insertStatusBlock("0")
         }
 
      }
