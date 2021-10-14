@@ -17,12 +17,14 @@ let package = Package(
     dependencies: [
         .package(name: "SawtoothSigning", url: "https://github.com/hyperledger/sawtooth-sdk-swift.git", .branch("main")),
 
-        .package(name: "CryptoSwift", url: "https://github.com/krzyzanowskim/CryptoSwift.git", .branch("master")),
+//        .package(name: "CryptoSwift", url: "https://github.com/krzyzanowskim/CryptoSwift.git", .branch("master")),
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.4.2")),
 
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.4.3"),
     ],
 
     targets: [
+
         .target(
             name: "DBChainKit",dependencies: ["SawtoothSigning","CryptoSwift","Alamofire"],
             path: "Sources",
@@ -31,11 +33,12 @@ let package = Package(
             name: "DBChainKitTests",dependencies: ["DBChainKit","SawtoothSigning","CryptoSwift","Alamofire"]),
 
 //        .target(
-//            name: "DBChainKit",dependencies: ["SawtoothSigning"],
+//            name: "DBChainKit",dependencies: ["SawtoothSigning","Alamofire"],
 //            path: "Sources",
 //            publicHeadersPath: "../Sources"),
+//
 //        .testTarget(
-//            name: "DBChainKitTests",dependencies: ["DBChainKit","SawtoothSigning"]),
+//            name: "DBChainKitTests",dependencies: ["DBChainKit","SawtoothSigning","Alamofire"]),
 
     ],
     swiftLanguageVersions: [.v5]
