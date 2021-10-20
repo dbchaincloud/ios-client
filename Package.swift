@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         .package(name: "SawtoothSigning", url: "https://github.com/hyperledger/sawtooth-sdk-swift.git", .branch("main")),
 
-        .package(name: "CryptoSwift", url: "https://github.com/krzyzanowskim/CryptoSwift.git", .branch("master")),
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.4.2")),
         
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.4.3"),
     ],
