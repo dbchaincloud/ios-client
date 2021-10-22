@@ -25,8 +25,8 @@ let package = Package(
     targets: [
         .target(
             name: "DBChainKit",dependencies: ["SawtoothSigning","CryptoSwift","Alamofire"],
-            path: "Sources",
-            publicHeadersPath: "../Sources"),
+            path: "DBChainKit",
+            publicHeadersPath: "../DBChainKit"),
         .testTarget(
             name: "DBChainKitTests",dependencies: ["DBChainKit","SawtoothSigning","CryptoSwift","Alamofire"]),
     ],
