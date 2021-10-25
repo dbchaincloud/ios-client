@@ -6,6 +6,8 @@ target 'DBChainKit' do
 
   # Pods for DBChainKit
 	pod 'SawtoothSigning'
-	pod 'CryptoSwift'
+	#pod 'CryptoSwift'
 	pod 'Alamofire'
+	pod 'HDWalletSDK'
+
 end

@@ -23,10 +23,13 @@ let package = Package(
     ],
 
     targets: [
+//        .target(
+//            name: "DBChainKit",dependencies: ["SawtoothSigning"],
+//            path: "DBChainKit",publicHeadersPath: "../DBChainKit"),
+
         .target(
             name: "DBChainKit",dependencies: ["SawtoothSigning","CryptoSwift","Alamofire"],
-            path: "DBChainKit",
-            publicHeadersPath: "../DBChainKit"),
+            path: "DBChainKit"),
         .testTarget(
             name: "DBChainKitTests",dependencies: ["DBChainKit","SawtoothSigning","CryptoSwift","Alamofire"]),
     ],
