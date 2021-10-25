@@ -38,7 +38,4 @@ Pod::Spec.new do |spec|
   spec.dependency "Alamofire"
   spec.dependency "HDWalletSDK"
 
-  # spec.swift_version = '5.0'
-  # spec.Swift_versions = '5.0'
-
 end
