@@ -1,7 +1,7 @@
 //
 //  CryptoSwift
 //
-//  Copyright (C) 2014-2021 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
+//  Copyright (C) Marcin Krzyżanowski <marcin@krzyzanowskim.com>
 //  This software is provided 'as-is', without any express or implied warranty.
 //
 //  In no event will the authors be held liable for any damages arising from the use of this software.
@@ -13,15 +13,12 @@
 //  - This notice may not be removed or altered from any source or binary distribution.
 //
 
-//  PKCS is a group of public-key cryptography standards devised
-//  and published by RSA Security Inc, starting in the early 1990s.
-//
+import Foundation
 
-struct PKCS7Padding: PaddingProtocol {
-  enum Error: Swift.Error {
-    case invalidPaddingValue
-  }
-
+/// Padding with random bytes, ending with the number of added bytes.
+/// Read the [Wikipedia](https://en.wikipedia.org/wiki/Padding_(cryptography)#ISO_10126)
+/// and [Crypto-IT](http://www.crypto-it.net/eng/theory/padding.html) articles for more info.
+struct ISO10126Padding: PaddingProtocol {
   init() {
   }
 
@@ -29,18 +26,14 @@ struct PKCS7Padding: PaddingProtocol {
   func add(to bytes: Array<UInt8>, blockSize: Int) -> Array<UInt8> {
     let padding = UInt8(blockSize - (bytes.count % blockSize))
     var withPadding = bytes
-    if padding == 0 {
-      // If the original data is a multiple of N bytes, then an extra block of bytes with value N is added.
-      withPadding += Array<UInt8>(repeating: UInt8(blockSize), count: Int(blockSize))
-    } else {
-      // The value of each added byte is the number of bytes that are added
-      withPadding += Array<UInt8>(repeating: padding, count: Int(padding))
+    if padding > 0 {
+      withPadding += (0..<(padding - 1)).map { _ in UInt8.random(in: 0...255) } + [padding]
     }
     return withPadding
   }
 
   @inlinable
-  func remove(from bytes: Array<UInt8>, blockSize _: Int?) -> Array<UInt8> {
+  func remove(from bytes: Array<UInt8>, blockSize: Int?) -> Array<UInt8> {
     guard !bytes.isEmpty, let lastByte = bytes.last else {
       return bytes
     }
@@ -57,6 +50,7 @@ struct PKCS7Padding: PaddingProtocol {
     if padding >= 1 {
       return Array(bytes[0..<finalLength])
     }
+
     return bytes
   }
 }

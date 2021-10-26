@@ -1,7 +1,7 @@
 //
 //  CryptoSwift
 //
-//  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
+//  Copyright (C) 2014-2021 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
 //  This software is provided 'as-is', without any express or implied warranty.
 //
 //  In no event will the authors be held liable for any damages arising from the use of this software.
@@ -16,8 +16,8 @@
 import Foundation
 
 extension Blowfish {
-    /// Initialize with CBC block mode.
-    public convenience init(key: String, iv: String, padding: Padding = .pkcs7) throws {
-        try self.init(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: padding)
-    }
+  /// Initialize with CBC block mode.
+  public convenience init(key: String, iv: String, padding: Padding = .pkcs7) throws {
+    try self.init(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: padding)
+  }
 }

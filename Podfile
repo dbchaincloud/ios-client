@@ -8,6 +8,6 @@ target 'DBChainKit' do
 	pod 'SawtoothSigning'
 	#pod 'CryptoSwift'
 	pod 'Alamofire'
-	pod 'HDWalletSDK'
+	pod 'HDWalletSDK', '~> 1.1.0'
 
 end

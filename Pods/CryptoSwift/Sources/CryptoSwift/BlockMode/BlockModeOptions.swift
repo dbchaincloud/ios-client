@@ -1,7 +1,7 @@
 //
 //  CryptoSwift
 //
-//  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
+//  Copyright (C) 2014-2021 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
 //  This software is provided 'as-is', without any express or implied warranty.
 //
 //  In no event will the authors be held liable for any damages arising from the use of this software.
@@ -14,14 +14,21 @@
 //
 
 public struct BlockModeOption: OptionSet {
-    public let rawValue: Int
+  public let rawValue: Int
 
-    public init(rawValue: Int) {
-        self.rawValue = rawValue
-    }
+  public init(rawValue: Int) {
+    self.rawValue = rawValue
+  }
 
-    static let none = BlockModeOption(rawValue: 1 << 0)
-    static let initializationVectorRequired = BlockModeOption(rawValue: 1 << 1)
-    static let paddingRequired = BlockModeOption(rawValue: 1 << 2)
-    static let useEncryptToDecrypt = BlockModeOption(rawValue: 1 << 3)
+  @usableFromInline
+  static let none = BlockModeOption(rawValue: 1 << 0)
+
+  @usableFromInline
+  static let initializationVectorRequired = BlockModeOption(rawValue: 1 << 1)
+
+  @usableFromInline
+  static let paddingRequired = BlockModeOption(rawValue: 1 << 2)
+
+  @usableFromInline
+  static let useEncryptToDecrypt = BlockModeOption(rawValue: 1 << 3)
 }
