@@ -23,10 +23,9 @@ Pod::Spec.new do |spec|
   # spec.pod_target_xcconfig = { 'ARCHS[sdk=iphonesimulator*]' => '$(ARCHS_STANDARD_64_BIT)' }
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7 armv7s x86_64' }
 
-  # spec.source_files  = "DBChainKit", "DBChainKit/**/*.{h,m}"
-  spec.source_files  = "DBChainKit/**/*.{h,m}"
+  spec.source_files  = "DBChainKit", "DBChainKit/**/*.{swift}"
 
-  # spec.public_header_files = "Classes/**/*.h"
+  # spec.public_header_files = "DBChainKit/**/*.h"
   # spec.source_files  = "DBChainKit/**/*.{h,m}"
 
   spec.exclude_files = "DBChainKit/**/*.h"
@@ -34,10 +33,11 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc     = true
   spec.static_framework = true
+  spec.module_name   = "DBChainKit"
   spec.frameworks       = "Security"
   spec.dependency "SawtoothSigning"
   spec.dependency "Alamofire"
-  spec.dependency "HDWalletSDK"
+  spec.dependency "HDWalletSDK", '>= 1.1.0'
 
   if spec.respond_to? 'swift_version'
       spec.swift_version = "5.0"

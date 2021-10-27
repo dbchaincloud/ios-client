@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (5.4.4)
   - CryptoSwift (1.0.0)
-  - DBChainKit (0.0.1):
+  - DBChainKit (1.0.0):
     - Alamofire
     - HDWalletSDK
     - SawtoothSigning
@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
-  DBChainKit: dbe1802c9cad2390103b7e7fc02504ddc89a329c
+  DBChainKit: 90e609293a759b4f452277620bda926f76cbf59d
   HDWalletSDK: 43e2c1d15f8e939a21fbf77140a45028c9c11b53
   SawtoothSigning: 4e5951c040a689d681c9ec2160180daa3a3ea50c
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634

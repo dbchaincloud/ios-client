@@ -632,14 +632,14 @@
 		6D20C6D41BAE413E8F00E292A0B926FD /* OP_RIPEMD160.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_RIPEMD160.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Crypto/OP_RIPEMD160.swift; sourceTree = "<group>"; };
 		6D6C2A4B15F49E31FC65B958AD4A0300 /* ecmult_gen.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ecmult_gen.h; path = secp256k1/Classes/secp256k1/src/ecmult_gen.h; sourceTree = "<group>"; };
 		6D9429A9F7F887CCEE90B611AFEA5C52 /* AEADChaCha20Poly1305.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AEADChaCha20Poly1305.swift; path = Sources/CryptoSwift/AEAD/AEADChaCha20Poly1305.swift; sourceTree = "<group>"; };
-		6E1FAEB17B4845A86BF839FC46B8F335 /* secp256k1.c */ = {isa = PBXFileReference; includeInIndex = 1; name = secp256k1.c; path = secp256k1/Classes/secp256k1/src/secp256k1.c; sourceTree = "<group>"; };
+		6E1FAEB17B4845A86BF839FC46B8F335 /* secp256k1.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = secp256k1.c; path = secp256k1/Classes/secp256k1/src/secp256k1.c; sourceTree = "<group>"; };
 		6EE9AAD592FE5CD7F5B4C3ADEBCB57DD /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		6EFAACAD68EAE81CCDFB68FA1FE05379 /* UtxoPrivateKeyType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UtxoPrivateKeyType.swift; path = HDWalletSDK/Wallet/UTXOBased/UtxoPrivateKeyType.swift; sourceTree = "<group>"; };
 		6F149591AB0E9DB502DE7064672494B5 /* SawtoothSigning.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SawtoothSigning.modulemap; sourceTree = "<group>"; };
 		726E1094D47E5639E0ECFB2C15A33D47 /* BlockEncryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockEncryptor.swift; path = Sources/CryptoSwift/BlockEncryptor.swift; sourceTree = "<group>"; };
 		72D37DE6AD05A3AB5B432DFF15B5B4A9 /* AES+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AES+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/AES+Foundation.swift"; sourceTree = "<group>"; };
 		73942D2F6B8CCED0DDFF5CA6F13A2DF4 /* OP_DIV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_DIV.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_DIV.swift; sourceTree = "<group>"; };
-		7434716131D44CE9ED19CCE7786C4F00 /* lax_der_parsing.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lax_der_parsing.c; path = secp256k1/Classes/secp256k1/contrib/lax_der_parsing.c; sourceTree = "<group>"; };
+		7434716131D44CE9ED19CCE7786C4F00 /* lax_der_parsing.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = lax_der_parsing.c; path = secp256k1/Classes/secp256k1/contrib/lax_der_parsing.c; sourceTree = "<group>"; };
 		7481FA0387F4B6BEF65D42AE17DCA953 /* main_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = main_impl.h; path = secp256k1/Classes/secp256k1/src/modules/recovery/main_impl.h; sourceTree = "<group>"; };
 		74D122ABB3798A87CB36715AB6AC14D6 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		755E3914E4E7F682CCB3775D4B9C1E4B /* ecmult_const.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ecmult_const.h; path = secp256k1/Classes/secp256k1/src/ecmult_const.h; sourceTree = "<group>"; };
@@ -667,7 +667,7 @@
 		816F3233A3C56EE7BEE86885CBDDEA14 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		825E95DC3B9DF259039BC159348EA6AA /* BlockCipher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockCipher.swift; path = Sources/CryptoSwift/BlockCipher.swift; sourceTree = "<group>"; };
 		84DF77F6B60CB4F8A1AE1F615CD3C367 /* StreamDecryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamDecryptor.swift; path = Sources/CryptoSwift/StreamDecryptor.swift; sourceTree = "<group>"; };
-		84E99D2D261389242615136BEBDA15BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		84E99D2D261389242615136BEBDA15BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84F456F2A324D628839570EAACC44EC7 /* OP_1ADD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_1ADD.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_1ADD.swift; sourceTree = "<group>"; };
 		850A45DE4388B38EFCE365CDC700A142 /* HDWalletSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HDWalletSDK-Info.plist"; sourceTree = "<group>"; };
 		85191C00F9FE67DCA3B981057BE10ECF /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = SawtoothSigning/Error.swift; sourceTree = "<group>"; };
@@ -712,7 +712,7 @@
 		9CD9F48971C1FBF7622B0EC6949B1D3B /* OP_NOT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_NOT.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_NOT.swift; sourceTree = "<group>"; };
 		9D47450A7A176A25ECA2D5AE619CCE1D /* CryptoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CryptoSwift.modulemap; sourceTree = "<group>"; };
 		9D8D31CDFD68A96090002DC969D32D77 /* ScriptFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScriptFactory.swift; path = HDWalletSDK/Core/BitcoinScript/ScriptFactory.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DC60FC0C7B6B43F5380A201E4635C02 /* OP_PUBKEYHASH.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_PUBKEYHASH.swift; path = "HDWalletSDK/Core/BitcoinScript/OP_CODE/Pseudo Words/OP_PUBKEYHASH.swift"; sourceTree = "<group>"; };
 		9E607A5DCE646AC897D2365DAA6F4E9E /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
 		9E988911198DBF6CF145CB6B3C36BA49 /* scalar_8x32_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scalar_8x32_impl.h; path = secp256k1/Classes/secp256k1/src/scalar_8x32_impl.h; sourceTree = "<group>"; };
@@ -732,7 +732,7 @@
 		A471B697B1CB42B6A350427B492FC160 /* Bit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bit.swift; path = Sources/CryptoSwift/Bit.swift; sourceTree = "<group>"; };
 		A4B961B494663EB2BE9DA2BA50599D77 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
 		A55AB7D6DE1B864D320D86929263CBE1 /* InsertModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InsertModel.swift; path = DBChainKit/InsertModel.swift; sourceTree = "<group>"; };
-		A5F70F3720EECE06D4D9A30155541B1D /* DBChainKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DBChainKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A5F70F3720EECE06D4D9A30155541B1D /* DBChainKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DBChainKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		A62A906741DE744E63AF4294B0D02F4F /* PKCS5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS5.swift; path = Sources/CryptoSwift/PKCS/PKCS5.swift; sourceTree = "<group>"; };
 		A67F0FBC9735397B5923E9354A05C132 /* OP_NUMEQUALVERIFY.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_NUMEQUALVERIFY.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_NUMEQUALVERIFY.swift; sourceTree = "<group>"; };
 		A6B4367453C9B7F6423A734BF7FF7CB3 /* CryptoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.release.xcconfig; sourceTree = "<group>"; };
@@ -811,7 +811,7 @@
 		D074B8305D492E4104CD6F8076AD1B33 /* Pods-DBChainKitDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DBChainKitDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		D08BC564447B1C83E78D92DB624077D3 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		D08D94EE97E99D0FBE678E38346CFFC5 /* DBInsertData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBInsertData.swift; path = DBChainKit/DBInsertData.swift; sourceTree = "<group>"; };
-		D0F67D86512CD24DCF46C29C26E23E7E /* lax_der_privatekey_parsing.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lax_der_privatekey_parsing.c; path = secp256k1/Classes/secp256k1/contrib/lax_der_privatekey_parsing.c; sourceTree = "<group>"; };
+		D0F67D86512CD24DCF46C29C26E23E7E /* lax_der_privatekey_parsing.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = lax_der_privatekey_parsing.c; path = secp256k1/Classes/secp256k1/contrib/lax_der_privatekey_parsing.c; sourceTree = "<group>"; };
 		D15EB29B9528EDD24C40A961938796C2 /* ECB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ECB.swift; path = Sources/CryptoSwift/BlockMode/ECB.swift; sourceTree = "<group>"; };
 		D21CBED080B2CD5FF1A05E9CD7D5A1F1 /* WordList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WordList.swift; path = HDWalletSDK/Mnemonic/WordList.swift; sourceTree = "<group>"; };
 		D23F2A29086F0D426F718EC6979060BC /* OP_CHECKSIGVERIFY.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_CHECKSIGVERIFY.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Crypto/OP_CHECKSIGVERIFY.swift; sourceTree = "<group>"; };
@@ -828,7 +828,7 @@
 		D936553B55DABDC74E723E09BDB80F8E /* DBRequestCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBRequestCollection.swift; path = DBChainKit/DBRequestCollection.swift; sourceTree = "<group>"; };
 		DA66C0C5BCE5695922194B60B15A686D /* Pods-DBChainKitDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DBChainKitDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DB0859D36C06B2BBD212E4781B70B287 /* OP_NOTIF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_NOTIF.swift; path = "HDWalletSDK/Core/BitcoinScript/OP_CODE/Flow Control/OP_NOTIF.swift"; sourceTree = "<group>"; };
-		DB2ED336321A5449DD94073435070D59 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		DB2ED336321A5449DD94073435070D59 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DC05CC76C1E515684CBC647207F497BA /* OP_2MUL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_2MUL.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_2MUL.swift; sourceTree = "<group>"; };
 		DFF33908925DEE14A7C72797A9A59627 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/CryptoSwift/Operators.swift; sourceTree = "<group>"; };
 		E00AED59591ED8C30E485287F4C4B55D /* OP_BOOLOR.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_BOOLOR.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_BOOLOR.swift; sourceTree = "<group>"; };
@@ -945,7 +945,6 @@
 				C07379D032F050BF199D5766F143D9AD /* Signer.swift */,
 				8E407F6A24EEC0FCB594C8E317CB848D /* Support Files */,
 			);
-			name = SawtoothSigning;
 			path = SawtoothSigning;
 			sourceTree = "<group>";
 		};
@@ -1042,7 +1041,6 @@
 				7EA18A5150D6779A44C221B401515835 /* Validation.swift */,
 				2460D2752FA4C0051A8FBB6AEDE01A70 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1247,7 +1245,6 @@
 				D21CBED080B2CD5FF1A05E9CD7D5A1F1 /* WordList.swift */,
 				E9E0B425D2A68FB055C0241FDFC99992 /* Support Files */,
 			);
-			name = HDWalletSDK;
 			path = HDWalletSDK;
 			sourceTree = "<group>";
 		};
@@ -1339,7 +1336,6 @@
 				03E6D89B3F0EB85ACAE145D414A52D7F /* ZeroPadding.swift */,
 				1F044F19345F116878EDDBF878091271 /* Support Files */,
 			);
-			name = CryptoSwift;
 			path = CryptoSwift;
 			sourceTree = "<group>";
 		};
@@ -1458,7 +1454,6 @@
 				4B714506D9B05D96AEDBA8E5E0453EC6 /* util.h */,
 				14A4CE9C7B4DC12F374F7843E1230344 /* Support Files */,
 			);
-			name = secp256k1.swift;
 			path = secp256k1.swift;
 			sourceTree = "<group>";
 		};

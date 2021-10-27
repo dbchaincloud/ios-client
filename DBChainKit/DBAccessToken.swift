@@ -7,6 +7,7 @@
 
 import Foundation
 import HDWalletSDK
+
 public struct DBToken {
 
     public init(){}
