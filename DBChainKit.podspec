@@ -38,7 +38,7 @@ Pod::Spec.new do |spec|
   spec.frameworks       = "Security"
   spec.dependency "SawtoothSigning"
   spec.dependency "Alamofire"
-  spec.dependency "HDWalletSDK", '>= 1.1.0'
+  spec.dependency "HDWalletSDK"
 
   if spec.respond_to? 'swift_version'
       spec.swift_version = "5.0"
