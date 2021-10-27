@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "DBChainKit"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.3"
   spec.summary      = "DBChain 系列库,生成BIP39 助记词. 通过助记词生成私钥, 私钥生成公钥, 公钥得出链地址"
 
 #  spec.description  = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Ann-iOS" => "m18620345206@163.com" }
 
   spec.platform     = :ios
-  spec.ios.deployment_target = '10.0'
+  spec.ios.deployment_target = '9.0'
 
   spec.source       = { :git => "https://github.com/dbchaincloud/ios-client.git", :tag => spec.version.to_s }
 
