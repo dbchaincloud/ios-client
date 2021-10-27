@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "DBChainKit"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "DBChain 系列库,生成BIP39 助记词. 通过助记词生成私钥, 私钥生成公钥, 公钥得出链地址"
 
 #  spec.description  = <<-DESC
