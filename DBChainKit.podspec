@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Ann-iOS" => "m18620345206@163.com" }
 
   spec.platform     = :ios
-  spec.ios.deployment_target = '9.0'
+  spec.ios.deployment_target = '10.0'
 
   spec.source       = { :git => "https://github.com/dbchaincloud/ios-client.git", :tag => spec.version.to_s }
 
