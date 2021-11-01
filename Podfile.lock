@@ -1,17 +1,17 @@
 PODS:
   - Alamofire (5.4.4)
   - CryptoSwift (1.4.2)
-  - HDWalletSDK (1.1.0):
+  - HDWalletSDK (1.2.0):
     - CryptoSwift (~> 1.4.2)
     - secp256k1.swift (~> 0.1.4)
-  - SawtoothSigning (0.0.1):
-    - secp256k1.swift
+  - SawtoothSigning (1.0.1):
+    - secp256k1.swift (~> 0.1.4)
   - secp256k1.swift (0.1.4)
 
 DEPENDENCIES:
   - Alamofire
-  - HDWalletSDK (~> 1.1.0)
-  - SawtoothSigning
+  - HDWalletSDK
+  - SawtoothSigning (~> 1.0.1)
 
 SPEC REPOS:
   trunk:
@@ -24,10 +24,10 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   CryptoSwift: a532e74ed010f8c95f611d00b8bbae42e9fe7c17
-  HDWalletSDK: 0edcccf5590c4d3aaa2876b0f6c66c7062e0bb7e
-  SawtoothSigning: 4e5951c040a689d681c9ec2160180daa3a3ea50c
+  HDWalletSDK: 1ef2cf954a5999e420e2735164b2c697be7445f4
+  SawtoothSigning: 9e35f440f2a042a088b457adcf69384867f94eba
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
 
-PODFILE CHECKSUM: 4fe2f0ca03adb53ba09b202bcc31626405b425af
+PODFILE CHECKSUM: c8d898f1f18ae3dd37e7c98d2228920cee898906
 
 COCOAPODS: 1.11.2
