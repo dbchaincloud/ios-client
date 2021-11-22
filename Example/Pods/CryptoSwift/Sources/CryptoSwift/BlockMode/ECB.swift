@@ -1,7 +1,7 @@
 //
 //  CryptoSwift
 //
-//  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
+//  Copyright (C) 2014-2021 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
 //  This software is provided 'as-is', without any express or implied warranty.
 //
 //  In no event will the authors be held liable for any damages arising from the use of this software.
@@ -17,35 +17,37 @@
 //
 
 public struct ECB: BlockMode {
-    public let options: BlockModeOption = .paddingRequired
+  public let options: BlockModeOption = .paddingRequired
+  public let customBlockSize: Int? = nil
 
-    public init() {
-    }
+  public init() {
+  }
 
-    public func worker(blockSize: Int, cipherOperation: @escaping CipherOperationOnBlock) throws -> CipherModeWorker {
-        return ECBModeWorker(blockSize: blockSize, cipherOperation: cipherOperation)
-    }
+  public func worker(blockSize: Int, cipherOperation: @escaping CipherOperationOnBlock, encryptionOperation: @escaping CipherOperationOnBlock) throws -> CipherModeWorker {
+    ECBModeWorker(blockSize: blockSize, cipherOperation: cipherOperation)
+  }
 }
 
 struct ECBModeWorker: BlockModeWorker {
-    typealias Element = Array<UInt8>
-    let cipherOperation: CipherOperationOnBlock
-    let blockSize: Int
-    let additionalBufferSize: Int = 0
+  typealias Element = Array<UInt8>
+  let cipherOperation: CipherOperationOnBlock
+  let blockSize: Int
+  let additionalBufferSize: Int = 0
 
-    init(blockSize: Int, cipherOperation: @escaping CipherOperationOnBlock) {
-        self.blockSize = blockSize
-        self.cipherOperation = cipherOperation
-    }
+  init(blockSize: Int, cipherOperation: @escaping CipherOperationOnBlock) {
+    self.blockSize = blockSize
+    self.cipherOperation = cipherOperation
+  }
 
-    mutating func encrypt(block plaintext: ArraySlice<UInt8>) -> Array<UInt8> {
-        guard let ciphertext = cipherOperation(plaintext) else {
-            return Array(plaintext)
-        }
-        return ciphertext
+  @inlinable
+  mutating func encrypt(block plaintext: ArraySlice<UInt8>) -> Array<UInt8> {
+    guard let ciphertext = cipherOperation(plaintext) else {
+      return Array(plaintext)
     }
+    return ciphertext
+  }
 
-    mutating func decrypt(block ciphertext: ArraySlice<UInt8>) -> Array<UInt8> {
-        return encrypt(block: ciphertext)
-    }
+  mutating func decrypt(block ciphertext: ArraySlice<UInt8>) -> Array<UInt8> {
+    self.encrypt(block: ciphertext)
+  }
 }

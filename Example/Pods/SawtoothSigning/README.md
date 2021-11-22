@@ -36,6 +36,11 @@ manager for Cocoa applications.
 5. Add the built .framework binaries to the Embedded Binaries and Linked
 Frameworks and Libraries sections in your Xcode project.
 
+6.
+```ruby
+pod 'SawtoothSigning'
+```
+
 ## Capabilities
 
 - Generate private/public key pairs

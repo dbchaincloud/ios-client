@@ -31,7 +31,7 @@ extension Dictionary{
             return nil;
         }
         return jsonStr
-       }
+    }
 
     // MARK: 字典转字符串 无序
     public func toJsonString() -> String? {

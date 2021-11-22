@@ -19,7 +19,7 @@ public struct RIPEMD160 {
         count = 0
     }
     
-    private mutating func compress(_ X: UnsafePointer<UInt32>) {
+    public mutating func compress(_ X: UnsafePointer<UInt32>) {
         
         // *** Helper functions (originally macros in rmd160.h) ***
         
@@ -306,7 +306,7 @@ public struct RIPEMD160 {
                  MDbuf.0 &+ bb &+ ccc)
     }
     
-    mutating private func update(data: Data) {
+    mutating public func update(data: Data) {
         data.withUnsafeBytes { (pointer) -> Void in
             guard var ptr = pointer.baseAddress?.assumingMemoryBound(to: UInt8.self) else { return }
             var length = data.count
@@ -334,7 +334,7 @@ public struct RIPEMD160 {
         count += Int64(data.count)
     }
     
-    mutating private func finalize() -> Data {
+    mutating public func finalize() -> Data {
         var X = [UInt32](repeating: 0, count: 16)
         /* append the bit m_n == 1 */
         buffer.append(0x80)
@@ -368,10 +368,11 @@ public struct RIPEMD160 {
         return data
     }
 
-   public static func hash(_ message: Data) -> Data {
+    public static func hash(_ message: Data) -> Data {
         var md = RIPEMD160()
         md.update(data: message)
         return md.finalize()
     }
 }
+
 

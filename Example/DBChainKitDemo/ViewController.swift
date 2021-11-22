@@ -13,7 +13,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        let sss = DBToken().createAccessToken(privateKey: <#T##[UInt8]#>, PublikeyData: <#T##Data#>)
+
+//        let mnemonic = DBChain.mnemonicStr
+//        print(mnemonic)
+//        let mnemonic = "ecology alpha fine disorder parade beach antenna slogan dial auto random chase"
+
+        let mnemonic = "ecology alpha fine disorder parade beach antenna slogan dial auto"
+        let pristr = DBChain.privateKey(mnemonicStr: mnemonic)
+        let pubstr = DBChain.publicKey(privateString: pristr)
+
+        print(pristr)
+        print(pubstr)
+
+        let addressStr = DBChain.address(publickeyStr: pubstr)
+        print(addressStr)
+
+        print("--------")
+
+        DBChain.mnemonicStr = mnemonic
+        let pri = DBChain.privatekey
+        let pub = DBChain.publickey
+        print("\(pri) \n\(pub)")
+        let address = DBChain.address
+        print(address)
+
     }
 
 
