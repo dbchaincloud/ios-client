@@ -51,7 +51,6 @@
 		2084D75E97F44D8DAE091C7739B06E01 /* CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC76BB7B064C29B390AC1DD865D6943 /* CBC.swift */; };
 		20B46048A49C3DD9704C96BCA4565A64 /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302BA8EAE3EF063297479EEB4D725FD /* Checksum.swift */; };
 		20CDE63DE1C1FEB015435D150D2E75C9 /* TransactionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA8B319CA905FDF37E37095AF8FCF0E /* TransactionInput.swift */; };
-		2128DA3E4F8D77DA5AF4598F2D39D569 /* DBRequestCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C81ECF7CC580B4ADFBFCC5441FA26A /* DBRequestCollection.swift */; };
 		21A9988BE56A3E7F062C7F6C14A4344F /* OP_NUMNOTEQUAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92C4B2C45ABB9E5CDF9A1265923E62 /* OP_NUMNOTEQUAL.swift */; };
 		21AFD07D3A7681289D14D00D0C380F4B /* OP_DROP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09839871EA6DD1F229C6E7E069DF4E8C /* OP_DROP.swift */; };
 		23240DF549B897D0E24A352EC4295429 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69895890B965729265300E86B44B611 /* Error.swift */; };
@@ -97,7 +96,7 @@
 		39AA60B5EA583D4785C2980268FB6DDA /* ecdsa_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = FEBA7D7262D6CD8D4E9B8B2B282BB220 /* ecdsa_impl.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		39C26FB139A2624401EEFC18247256D5 /* secp256k1_ec_mult_static_context.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A8CF83CA37F2225A252CD0D111DCB6F /* secp256k1_ec_mult_static_context.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3A1A0CF9894CA67AEF539D097870754E /* lax_der_privatekey_parsing.h in Headers */ = {isa = PBXBuildFile; fileRef = 05C465148D04FD8A099C7F09541071B7 /* lax_der_privatekey_parsing.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		3BBCC0CDDCAB3973C2C4D5B4A7122BBC /* DBQueryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A363444665E0A76EF0862C7FF8225 /* DBQueryData.swift */; };
+		3BBCC0CDDCAB3973C2C4D5B4A7122BBC /* DBParamSigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A363444665E0A76EF0862C7FF8225 /* DBParamSigner.swift */; };
 		3BF80B98213E4900761B8E9C6FD57947 /* ISO10126Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68262EE32E6923C7C3D90700857C17 /* ISO10126Padding.swift */; };
 		3D55D30838700385F206C2A7E0DEAC19 /* Opcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFA83647968D147B14F9294BD750519 /* Opcode.swift */; };
 		3E4EA23CE6B41E4E1C31D55C7AE36D39 /* OP_NOP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D1A1327850C7E06D45B2B16469CB0 /* OP_NOP.swift */; };
@@ -113,7 +112,7 @@
 		455293CB3237E60314F28FC940E2E19E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
 		45670E07AAFDE8877911FA0FA180E8C8 /* AEADChaCha20Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1130C1F2E0420152F3A8F7988F2E87 /* AEADChaCha20Poly1305.swift */; };
 		4577F77F0D86846C5596817F9A9BDC0A /* OP_SPLIT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189162ECDBC78A06F470A38A0DA2E73 /* OP_SPLIT.swift */; };
-		45C670080DCE776003EE61442F536E84 /* DBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969FA690494D15C55308B4A16678E98 /* DBRequest.swift */; };
+		45C670080DCE776003EE61442F536E84 /* DBBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969FA690494D15C55308B4A16678E98 /* DBBaseRequest.swift */; };
 		4634BA717BFCE522E5B42304C6A78B5D /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543247A9E5D8A3D1609A3613EAE6A3A5 /* ParameterEncoding.swift */; };
 		46391F30224B5E954A11354195E096BC /* secp256k1_recovery.h in Headers */ = {isa = PBXBuildFile; fileRef = F00272A7B54B74D271E197ADF29F7D65 /* secp256k1_recovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		465D8EE01744AE26ACE19CCFFF21CBA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
@@ -133,7 +132,6 @@
 		53042D9D194CD8BE861A5DD3781EF261 /* BlockDecryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC9D452A9C323F45974D83F951A432 /* BlockDecryptor.swift */; };
 		53483288FB82EE44FEDFA24FA3ABADA6 /* lax_der_parsing.c in Sources */ = {isa = PBXBuildFile; fileRef = D87D1E0C9A966380ECCA8965620172D8 /* lax_der_parsing.c */; };
 		53BF0FE77A91BC99F2CBA559D91F105F /* PBKDF2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66B3E8FB45125BE42C40A1F97A7E0E /* PBKDF2.swift */; };
-		53DA19519ED049C1B0E9D4E6CF53B0FA /* DBAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D2B3692FF6514B23DCFE84D4933115 /* DBAccessToken.swift */; };
 		542C9E8C1561679C2B9596C7653D375E /* SHA2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B90C4D1A605840A5FF3A189C0275BC /* SHA2.swift */; };
 		55018C7112A943BE15FB9735839CB8AE /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF01C2C7C485858558577021E45856 /* Int+Extension.swift */; };
 		5577BDE8B8778F2F28AD5BED0279C685 /* OP_BIN2NUM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161817B6DE32950BE93A8D8AFEC54C78 /* OP_BIN2NUM.swift */; };
@@ -199,14 +197,13 @@
 		8BFE8E6BDEFBF870C1D0732BDF8F6967 /* UInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9689B15FDEF7AD17FEC0C6544BFF7A6C /* UInt128.swift */; };
 		8C4DA959EE72107B159BDFB472B34133 /* OP_CHECKMULTISIGVERIFY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C2A49B663376F65A60AF9F207DB66 /* OP_CHECKMULTISIGVERIFY.swift */; };
 		8DA36E33306EFAA1275D13B978BB8666 /* AEAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B34C592660F24BD5278D9FB374569E /* AEAD.swift */; };
-		8EC4E821A5DB538CE686218CB884E151 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCCC11AC1E08D6009A4465BF6EFEEC1 /* UserModel.swift */; };
+		8EC4E821A5DB538CE686218CB884E151 /* DBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCCC11AC1E08D6009A4465BF6EFEEC1 /* DBUserModel.swift */; };
 		8F9E1EEF2FE52E3231A769722D5C4148 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC56F3567BECF761AA2C373E0AEED8 /* ServerTrustEvaluation.swift */; };
 		918AF1547033541B10968837BA9F6113 /* lax_der_parsing.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E4821ADB1B77016102DCD88B47A0204 /* lax_der_parsing.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		91A30E6A690D182A3B42C044A4D64087 /* TransactionOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42929FE90B6454EAA90E4B2D974B1F51 /* TransactionOutput.swift */; };
 		92D3DA8C66C63AD5AB2FB84F76591AA5 /* PKCS7Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102A396850933BF8864C8BC7D18E3AF5 /* PKCS7Padding.swift */; };
 		930886C10DB67ECD0386C3C24FF76A04 /* OP_2ROT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F4ECD2404C6C781BFD8D24A99D2CF3 /* OP_2ROT.swift */; };
 		93C487C1F302336AE50250C803316EFE /* OP_DUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4691788D34D784D40290DDC1AB16074 /* OP_DUP.swift */; };
-		93DB9042C547ACBF919E13D92E304658 /* InsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2835DC1519E5478AB1157B49F380A3F /* InsertModel.swift */; };
 		941822CDF68EB8F4D49F150457A82616 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7CC5CF85E5087A2D8ADE41D12CA673 /* ResponseSerialization.swift */; };
 		942ADA09E9E90E9F4BC6531FC943E4B1 /* Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B6296BFBF1B073CED7406C23FEFE /* Signer.swift */; };
 		94993C81C811BFB909467692A0CFC8E5 /* DerivationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00763D33633D1A253C1085BA02CA0A /* DerivationNode.swift */; };
@@ -227,7 +224,6 @@
 		9E1EB59875B9875193013A10277645FD /* Blowfish+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0626B632311C814242D3F6B4857E1554 /* Blowfish+Foundation.swift */; };
 		9FDF2DE54E73EF55844B4AE0CC7990EA /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632AA5DE3D2F690421DA924BF6CF505 /* Crypto.swift */; };
 		A010171CFA2A6782E83B75D63BC34B13 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA8A057E71D5D7AA2E9E2CAF83629E8 /* String+Extension.swift */; };
-		A02C5F3B6737C097085EB360FFD0D0A1 /* DBMnemonicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B262DB087BF096E0C8AB98A858B636C /* DBMnemonicManager.swift */; };
 		A1084A54D39A99903AA64E42791F7B16 /* scalar_4x64_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D224F3E1D41951A039C10A91998340D /* scalar_4x64_impl.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A1B1E5A541617AAF09813C436E551FBB /* EIP155Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF99C94D74F9BF0C38066AFE0B742BD /* EIP155Signer.swift */; };
 		A3153333FC136836B0028E6AB2A56BEE /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDD32C97280E9B825AAB4588EB396B /* AlamofireExtended.swift */; };
@@ -278,7 +274,7 @@
 		C1560D479D2C4290339F2153A1009695 /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59A7991B6081D550A3247FE624A200 /* Digest.swift */; };
 		C16A047C4E8D856309A486182A490993 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9FDADC44A8EA4A0F9D61FE53B7AC0C /* MultipartFormData.swift */; };
 		C2CE6DE9C03CB3770AFA5694F94AEAE7 /* OP_ELSE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A1D0AB74EF8E9BB32B872F3729FE9 /* OP_ELSE.swift */; };
-		C38516C1A768EE277414D0C52BFF6DEE /* DBInsertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2A5720EA0008B020DE2D52CB5E17EC /* DBInsertData.swift */; };
+		C38516C1A768EE277414D0C52BFF6DEE /* DBInsertRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2A5720EA0008B020DE2D52CB5E17EC /* DBInsertRequest.swift */; };
 		C4A0BE4B75DEC82E878640D7C2C70494 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22068C176131871EB7A55A14C352F98A /* WordList.swift */; };
 		C7F66519CE6148F21D7DB11423F1D34D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099B43086B6A83053EB1428BDECE1B4 /* Response.swift */; };
 		C8796C593A3B5CD73EA460B2684E8F94 /* OP_PUBKEYHASH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084D09793AF5903F8A12189DDA64C1E /* OP_PUBKEYHASH.swift */; };
@@ -479,7 +475,7 @@
 		09839871EA6DD1F229C6E7E069DF4E8C /* OP_DROP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_DROP.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Stack/OP_DROP.swift; sourceTree = "<group>"; };
 		0985FD1B301462F0F0EF0D200EFBE5BA /* field_5x52_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = field_5x52_impl.h; path = secp256k1/Classes/secp256k1/src/field_5x52_impl.h; sourceTree = "<group>"; };
 		0A8CF83CA37F2225A252CD0D111DCB6F /* secp256k1_ec_mult_static_context.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = secp256k1_ec_mult_static_context.h; path = secp256k1/Classes/secp256k1_ec_mult_static_context.h; sourceTree = "<group>"; };
-		0AFD47F46DCACA51078B74441D0FD495 /* lax_der_privatekey_parsing.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lax_der_privatekey_parsing.c; path = secp256k1/Classes/secp256k1/contrib/lax_der_privatekey_parsing.c; sourceTree = "<group>"; };
+		0AFD47F46DCACA51078B74441D0FD495 /* lax_der_privatekey_parsing.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = lax_der_privatekey_parsing.c; path = secp256k1/Classes/secp256k1/contrib/lax_der_privatekey_parsing.c; sourceTree = "<group>"; };
 		0C0008304019880A8D70CBD0788E2B2A /* Pods-DBChainKitDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DBChainKitDemo.modulemap"; sourceTree = "<group>"; };
 		0C9FDADC44A8EA4A0F9D61FE53B7AC0C /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		0D783EC2F5EBE1A8D81AEFD576A076CD /* CryptoSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CryptoSwift-dummy.m"; sourceTree = "<group>"; };
@@ -518,7 +514,7 @@
 		21B49B303AEAE930BAD85DCBBA9C3B5A /* scalar_low_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scalar_low_impl.h; path = secp256k1/Classes/secp256k1/src/scalar_low_impl.h; sourceTree = "<group>"; };
 		22068C176131871EB7A55A14C352F98A /* WordList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WordList.swift; path = HDWalletSDK/Mnemonic/WordList.swift; sourceTree = "<group>"; };
 		2219E23CF18D674033FE0BBB140DF3BC /* OP_AND.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_AND.swift; path = "HDWalletSDK/Core/BitcoinScript/OP_CODE/Bitwise Logic/OP_AND.swift"; sourceTree = "<group>"; };
-		22ED11C65AEBF3425C719FD3C7B2A508 /* DBChainKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DBChainKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		22ED11C65AEBF3425C719FD3C7B2A508 /* DBChainKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DBChainKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		230D62A8B594F201EFA35A5F5F46679F /* UtxoTransactionBuilderInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UtxoTransactionBuilderInterface.swift; path = HDWalletSDK/Wallet/UTXOBased/Protocols/UtxoTransactionBuilderInterface.swift; sourceTree = "<group>"; };
 		236D7883F91958FCCB3C514AE5A11D75 /* SawtoothSigning */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SawtoothSigning; path = SawtoothSigning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C9DD02603A6AE30924C76CD2C88737 /* ScriptChunk.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScriptChunk.swift; path = HDWalletSDK/Core/BitcoinScript/ScriptChunk.swift; sourceTree = "<group>"; };
@@ -572,7 +568,6 @@
 		40DE2908487FAC1EAE49EC2CCC50EDFF /* Pods-DBChainKitDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DBChainKitDemo-Info.plist"; sourceTree = "<group>"; };
 		40FF65C314629B94179A993A26EAAF67 /* Generics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generics.swift; path = Sources/CryptoSwift/Generics.swift; sourceTree = "<group>"; };
 		41310CBF6C53A1AA2C11A6D70C109ECD /* OP_3DUP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_3DUP.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Stack/OP_3DUP.swift; sourceTree = "<group>"; };
-		41D2B3692FF6514B23DCFE84D4933115 /* DBAccessToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBAccessToken.swift; path = DBChainKit/DBAccessToken.swift; sourceTree = "<group>"; };
 		4269E544D6721BFA4811E0F5D2296053 /* CryptoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.debug.xcconfig; sourceTree = "<group>"; };
 		42929FE90B6454EAA90E4B2D974B1F51 /* TransactionOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransactionOutput.swift; path = HDWalletSDK/Wallet/UTXOBased/Model/UnspendTransaction/TransactionOutput.swift; sourceTree = "<group>"; };
 		43276E8CFC655878BFEAC368E73C7DAD /* OP_IFDUP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_IFDUP.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Stack/OP_IFDUP.swift; sourceTree = "<group>"; };
@@ -587,7 +582,7 @@
 		4954EF3871ADEFB1E7EB5BBDC14B79D0 /* OP_CHECKSEQUENCEVERIFY.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_CHECKSEQUENCEVERIFY.swift; path = "HDWalletSDK/Core/BitcoinScript/OP_CODE/Lock Time/OP_CHECKSEQUENCEVERIFY.swift"; sourceTree = "<group>"; };
 		497D6930AD88BB71CEA0674A8B599A74 /* OP_MAX.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_MAX.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_MAX.swift; sourceTree = "<group>"; };
 		49CAFAE842BC3E65D7045F28D2874F69 /* OP_IF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_IF.swift; path = "HDWalletSDK/Core/BitcoinScript/OP_CODE/Flow Control/OP_IF.swift"; sourceTree = "<group>"; };
-		49F508BF8FA610D5FF5BB238457CFE8B /* secp256k1.c */ = {isa = PBXFileReference; includeInIndex = 1; name = secp256k1.c; path = secp256k1/Classes/secp256k1/src/secp256k1.c; sourceTree = "<group>"; };
+		49F508BF8FA610D5FF5BB238457CFE8B /* secp256k1.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = secp256k1.c; path = secp256k1/Classes/secp256k1/src/secp256k1.c; sourceTree = "<group>"; };
 		4B5ABC6FF1B1E6540B4544A896BD264D /* field_10x26_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = field_10x26_impl.h; path = secp256k1/Classes/secp256k1/src/field_10x26_impl.h; sourceTree = "<group>"; };
 		4BAF48049D27B3209303C37BE3026274 /* main_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = main_impl.h; path = secp256k1/Classes/secp256k1/src/modules/recovery/main_impl.h; sourceTree = "<group>"; };
 		4C50EBC983354D5632874315FF8022CC /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
@@ -618,7 +613,7 @@
 		593C211738B841C784BFFDFB34882688 /* Array+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/Array+Foundation.swift"; sourceTree = "<group>"; };
 		5A17CBF9498858914F62C414CF35F409 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		5B4558D3A2B8A46AC82CF2D36869D6D4 /* BlockEncryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockEncryptor.swift; path = Sources/CryptoSwift/BlockEncryptor.swift; sourceTree = "<group>"; };
-		5BCCC11AC1E08D6009A4465BF6EFEEC1 /* UserModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = DBChainKit/UserModel.swift; sourceTree = "<group>"; };
+		5BCCC11AC1E08D6009A4465BF6EFEEC1 /* DBUserModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBUserModel.swift; path = DBChainKit/DBUserModel.swift; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D7B1AF80C852D22F6377FC0D0337410 /* HDWalletSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HDWalletSDK.release.xcconfig; sourceTree = "<group>"; };
 		5E3CF4A885F74655B6DAA43A06E1CE0E /* KeystoreV3Json.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeystoreV3Json.swift; path = HDWalletSDK/Keystore/KeystoreV3Json.swift; sourceTree = "<group>"; };
@@ -660,14 +655,13 @@
 		76CE1023F1F9656CE4B613055A96F13C /* SHA3.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA3.swift; path = Sources/CryptoSwift/SHA3.swift; sourceTree = "<group>"; };
 		782A47F769FEF350F01C0990A66F245A /* secp256k1.swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = secp256k1.swift.debug.xcconfig; sourceTree = "<group>"; };
 		787E88573F31501595C6F5DD8B99FCC2 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
-		7969FA690494D15C55308B4A16678E98 /* DBRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBRequest.swift; path = DBChainKit/DBRequest.swift; sourceTree = "<group>"; };
+		7969FA690494D15C55308B4A16678E98 /* DBBaseRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBBaseRequest.swift; path = DBChainKit/DBBaseRequest.swift; sourceTree = "<group>"; };
 		799F7FEC73C5DD0B723497B6201FEAFF /* Typealiaces.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiaces.swift; path = HDWalletSDK/Core/Typealiaces.swift; sourceTree = "<group>"; };
 		7A44DFFB214656F6229EDEA33A1C8F0C /* CryptoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CryptoSwift.modulemap; sourceTree = "<group>"; };
 		7A60B691A4C0022434F31FB6CB8655B5 /* hash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hash.h; path = secp256k1/Classes/secp256k1/src/hash.h; sourceTree = "<group>"; };
 		7A89D9F2E5E35EEA507ED45917D9269B /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
 		7AC76BB7B064C29B390AC1DD865D6943 /* CBC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBC.swift; path = Sources/CryptoSwift/BlockMode/CBC.swift; sourceTree = "<group>"; };
 		7B020C58A5C2C738C2CC8AC83325896D /* scratch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scratch.h; path = secp256k1/Classes/secp256k1/src/scratch.h; sourceTree = "<group>"; };
-		7B262DB087BF096E0C8AB98A858B636C /* DBMnemonicManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBMnemonicManager.swift; path = DBChainKit/DBMnemonicManager.swift; sourceTree = "<group>"; };
 		7C1D8D07FCABC0417038AB7ED743000C /* scalar_8x32.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scalar_8x32.h; path = secp256k1/Classes/secp256k1/src/scalar_8x32.h; sourceTree = "<group>"; };
 		7C8E055F954FD5C23D51F75376BD5B1B /* ScriptFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScriptFactory.swift; path = HDWalletSDK/Core/BitcoinScript/ScriptFactory.swift; sourceTree = "<group>"; };
 		7D5C974E3B0261224A5C4546423F2363 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
@@ -720,7 +714,7 @@
 		9B6C2A49B663376F65A60AF9F207DB66 /* OP_CHECKMULTISIGVERIFY.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_CHECKMULTISIGVERIFY.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Crypto/OP_CHECKMULTISIGVERIFY.swift; sourceTree = "<group>"; };
 		9BD4E4B76039B343D9781BF335B1D62F /* VarInt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VarInt.swift; path = HDWalletSDK/Core/VarInt.swift; sourceTree = "<group>"; };
 		9D77753EDEC18C7F7519C03117AF6057 /* scalar_8x32_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scalar_8x32_impl.h; path = secp256k1/Classes/secp256k1/src/scalar_8x32_impl.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E28BB47BE112630054C33AA605AC0BC /* RIPEMD160.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RIPEMD160.swift; path = HDWalletSDK/Core/Crypto/Hash/RIPEMD160.swift; sourceTree = "<group>"; };
 		9E4821ADB1B77016102DCD88B47A0204 /* lax_der_parsing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lax_der_parsing.h; path = secp256k1/Classes/secp256k1/contrib/lax_der_parsing.h; sourceTree = "<group>"; };
 		9F84397DB522F9F1586690CF99058DB6 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
@@ -729,7 +723,7 @@
 		A0E908D21871D6C45BAABF0ADF1D13EA /* OP_INVERT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_INVERT.swift; path = "HDWalletSDK/Core/BitcoinScript/OP_CODE/Bitwise Logic/OP_INVERT.swift"; sourceTree = "<group>"; };
 		A18B3FB0911BDE4A02638A6F5211E577 /* SawtoothSigning-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SawtoothSigning-dummy.m"; sourceTree = "<group>"; };
 		A1A3D23CC6DE1C913F541A334140760B /* HDWalletKitError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HDWalletKitError.swift; path = HDWalletSDK/Core/Error/HDWalletKitError.swift; sourceTree = "<group>"; };
-		A28C930AF0FC40C35D380D020BECB9F5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		A28C930AF0FC40C35D380D020BECB9F5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A2E5C483D78CEB506CF8CDED8D62D452 /* SawtoothSigning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SawtoothSigning.release.xcconfig; sourceTree = "<group>"; };
 		A3A605DA376745D955ABD588BCD59EDF /* OP_CHECKSIGVERIFY.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_CHECKSIGVERIFY.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Crypto/OP_CHECKSIGVERIFY.swift; sourceTree = "<group>"; };
 		A3EFD69E19BB8DDC47EB86E43E1066BA /* DigestType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DigestType.swift; path = Sources/CryptoSwift/DigestType.swift; sourceTree = "<group>"; };
@@ -803,13 +797,12 @@
 		D1BA05DB6DD0AD14590DF2771114BFE7 /* OP_INVALIDOPCODE.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_INVALIDOPCODE.swift; path = "HDWalletSDK/Core/BitcoinScript/OP_CODE/Pseudo Words/OP_INVALIDOPCODE.swift"; sourceTree = "<group>"; };
 		D1FC5F509C824A2B7C99CB2FB1909697 /* OP_ENDIF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_ENDIF.swift; path = "HDWalletSDK/Core/BitcoinScript/OP_CODE/Flow Control/OP_ENDIF.swift"; sourceTree = "<group>"; };
 		D37B6F8209C579B1EE2C855D460E7153 /* OP_1ADD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_1ADD.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_1ADD.swift; sourceTree = "<group>"; };
-		D3C81ECF7CC580B4ADFBFCC5441FA26A /* DBRequestCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBRequestCollection.swift; path = DBChainKit/DBRequestCollection.swift; sourceTree = "<group>"; };
 		D42746FC2A22AA962C51C3CF70D96216 /* DBChainKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DBChainKit.debug.xcconfig; sourceTree = "<group>"; };
 		D48116CD12E6C8D3C6256E090B50A762 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		D4E4EE5BD11CBF5E11A0FC819DEADC54 /* PrivateKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrivateKey.swift; path = SawtoothSigning/PrivateKey.swift; sourceTree = "<group>"; };
 		D70F287765EDF9C9DAA5E42F1A850541 /* PublicKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PublicKey.swift; path = SawtoothSigning/PublicKey.swift; sourceTree = "<group>"; };
 		D7B01C51FA973AF4ACFF12327F1ECF7B /* group.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = group.h; path = secp256k1/Classes/secp256k1/src/group.h; sourceTree = "<group>"; };
-		D87D1E0C9A966380ECCA8965620172D8 /* lax_der_parsing.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lax_der_parsing.c; path = secp256k1/Classes/secp256k1/contrib/lax_der_parsing.c; sourceTree = "<group>"; };
+		D87D1E0C9A966380ECCA8965620172D8 /* lax_der_parsing.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = lax_der_parsing.c; path = secp256k1/Classes/secp256k1/contrib/lax_der_parsing.c; sourceTree = "<group>"; };
 		DA66C0C5BCE5695922194B60B15A686D /* Pods-DBChainKitDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DBChainKitDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DAF9C726592C91B0E092D317EA78AB51 /* OP_TOTALSTACK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_TOTALSTACK.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Stack/OP_TOTALSTACK.swift; sourceTree = "<group>"; };
 		DB20EA6BB1F7F11137FBB994FFB1549E /* scalar_low.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scalar_low.h; path = secp256k1/Classes/secp256k1/src/scalar_low.h; sourceTree = "<group>"; };
@@ -822,12 +815,11 @@
 		E0A7C52DA44D7D504A37CEF79B5A96DF /* RLP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RLP.swift; path = HDWalletSDK/Core/Encodeing/RLP.swift; sourceTree = "<group>"; };
 		E0C707236886B50CBC533C78DA1E5873 /* Array+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Extension.swift"; path = "Sources/CryptoSwift/Array+Extension.swift"; sourceTree = "<group>"; };
 		E0D26E46646A74EBFEDFD098CA5FB32C /* OP_ADD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_ADD.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_ADD.swift; sourceTree = "<group>"; };
-		E2835DC1519E5478AB1157B49F380A3F /* InsertModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InsertModel.swift; path = DBChainKit/InsertModel.swift; sourceTree = "<group>"; };
 		E37EA97AB9945842D9201B6F812CE33A /* DBChainKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DBChainKit-dummy.m"; sourceTree = "<group>"; };
 		E3F020447FEA6D31894F4D4770D121B4 /* OP_DIV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_DIV.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_DIV.swift; sourceTree = "<group>"; };
 		E3FA934AA46AFC39EA0C81FD31F33DE7 /* OP_HASH160.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_HASH160.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Crypto/OP_HASH160.swift; sourceTree = "<group>"; };
 		E4301062736205C2C8454BC3DAEB459A /* field_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = field_impl.h; path = secp256k1/Classes/secp256k1/src/field_impl.h; sourceTree = "<group>"; };
-		E53A363444665E0A76EF0862C7FF8225 /* DBQueryData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBQueryData.swift; path = DBChainKit/DBQueryData.swift; sourceTree = "<group>"; };
+		E53A363444665E0A76EF0862C7FF8225 /* DBParamSigner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBParamSigner.swift; path = DBChainKit/DBParamSigner.swift; sourceTree = "<group>"; };
 		E5BB3F89C8F023F9987881451BA151A6 /* num_gmp_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = num_gmp_impl.h; path = secp256k1/Classes/secp256k1/src/num_gmp_impl.h; sourceTree = "<group>"; };
 		E5BE18CC3E209BC8B4708F0BC4E335D0 /* OP_GREATERTHANOREQUAL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_GREATERTHANOREQUAL.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_GREATERTHANOREQUAL.swift; sourceTree = "<group>"; };
 		E5EA89465341498BD2A2BFC4967C5BAF /* UnsignedTransaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnsignedTransaction.swift; path = HDWalletSDK/Wallet/UTXOBased/Model/UnsignedTransaction.swift; sourceTree = "<group>"; };
@@ -852,7 +844,7 @@
 		F01A0114A51524CDC7FA6E6436536AFD /* HMAC+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HMAC+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/HMAC+Foundation.swift"; sourceTree = "<group>"; };
 		F03EDD989D3B07F93CC10ABEAE750047 /* SMP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SMP.swift; path = HDWalletSDK/Core/BigInt/SMP.swift; sourceTree = "<group>"; };
 		F17EA8138FE1CCF95F6EBAE2C3385AF0 /* OP_0NOTEQUAL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_0NOTEQUAL.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Arithmetic/OP_0NOTEQUAL.swift; sourceTree = "<group>"; };
-		F1966F7EE69B813CAF6E7DDD42758B00 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F1966F7EE69B813CAF6E7DDD42758B00 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F19B2B38D0BBDDDC917C53B3B80BC376 /* OP_PUSHDATA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_PUSHDATA.swift; path = "HDWalletSDK/Core/BitcoinScript/OP_CODE/Push Data/OP_PUSHDATA.swift"; sourceTree = "<group>"; };
 		F3D8428E0A9A657FD770A90F8EC8263B /* num.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = num.h; path = secp256k1/Classes/secp256k1/src/num.h; sourceTree = "<group>"; };
 		F421076786CE83FF56B59B4A7005AAE7 /* OpCodeProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpCodeProtocol.swift; path = HDWalletSDK/Core/BitcoinScript/OpCodeProtocol.swift; sourceTree = "<group>"; };
@@ -872,7 +864,7 @@
 		FDCCDBA24D7B4AAE6498A2C9270746F2 /* UInt32+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt32+Extension.swift"; path = "Sources/CryptoSwift/UInt32+Extension.swift"; sourceTree = "<group>"; };
 		FE88F77B8022115BE8704EDD4A6C8BAC /* OP_PICK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OP_PICK.swift; path = HDWalletSDK/Core/BitcoinScript/OP_CODE/Stack/OP_PICK.swift; sourceTree = "<group>"; };
 		FEBA7D7262D6CD8D4E9B8B2B282BB220 /* ecdsa_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ecdsa_impl.h; path = secp256k1/Classes/secp256k1/src/ecdsa_impl.h; sourceTree = "<group>"; };
-		FF2A5720EA0008B020DE2D52CB5E17EC /* DBInsertData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBInsertData.swift; path = DBChainKit/DBInsertData.swift; sourceTree = "<group>"; };
+		FF2A5720EA0008B020DE2D52CB5E17EC /* DBInsertRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DBInsertRequest.swift; path = DBChainKit/DBInsertRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1026,7 +1018,6 @@
 				3BAD3B36A6301278CD5EB4F0BB0129BC /* ZeroPadding.swift */,
 				C23239369B9A6DC8E7EBDD9FA5D22DD0 /* Support Files */,
 			);
-			name = CryptoSwift;
 			path = CryptoSwift;
 			sourceTree = "<group>";
 		};
@@ -1098,7 +1089,6 @@
 				AE2E81B6CD04BCE753F3EB76866E6810 /* Signer.swift */,
 				9795D63E1AC2E21E7F07D3D2BA66F582 /* Support Files */,
 			);
-			name = SawtoothSigning;
 			path = SawtoothSigning;
 			sourceTree = "<group>";
 		};
@@ -1167,7 +1157,6 @@
 				B5577693A273E040194647130B770A62 /* util.h */,
 				9DBA1CA78592C3ABD81A883C4653394F /* Support Files */,
 			);
-			name = secp256k1.swift;
 			path = secp256k1.swift;
 			sourceTree = "<group>";
 		};
@@ -1377,7 +1366,6 @@
 				22068C176131871EB7A55A14C352F98A /* WordList.swift */,
 				43E052768014C2CB520ADA4BFADB272F /* Support Files */,
 			);
-			name = HDWalletSDK;
 			path = HDWalletSDK;
 			sourceTree = "<group>";
 		};
@@ -1424,20 +1412,16 @@
 		A5E4F34609791321458941A782B3B013 /* DBChainKit */ = {
 			isa = PBXGroup;
 			children = (
-				41D2B3692FF6514B23DCFE84D4933115 /* DBAccessToken.swift */,
 				0ED787A1AD6D7CE369C1B26B7601BDFB /* DBBech32.swift */,
 				9A7B08CA0C18E6407DE08A8756549E6F /* DBChainKit.swift */,
+				FF2A5720EA0008B020DE2D52CB5E17EC /* DBInsertRequest.swift */,
 				7252ECAA424324907EC5A4F1FE66DB9C /* DBGCDTimer.swift */,
-				FF2A5720EA0008B020DE2D52CB5E17EC /* DBInsertData.swift */,
-				7B262DB087BF096E0C8AB98A858B636C /* DBMnemonicManager.swift */,
-				E53A363444665E0A76EF0862C7FF8225 /* DBQueryData.swift */,
-				7969FA690494D15C55308B4A16678E98 /* DBRequest.swift */,
-				D3C81ECF7CC580B4ADFBFCC5441FA26A /* DBRequestCollection.swift */,
+				E53A363444665E0A76EF0862C7FF8225 /* DBParamSigner.swift */,
+				7969FA690494D15C55308B4A16678E98 /* DBBaseRequest.swift */,
 				487C5D056ADC07826CBF8812B6ED507B /* DictionaryExtension.swift */,
-				E2835DC1519E5478AB1157B49F380A3F /* InsertModel.swift */,
 				66B99355BFD1127E0E92A34112D361F5 /* SegwitAddrCoder.swift */,
 				EB83B6296BFBF1B073CED7406C23FEFE /* Signer.swift */,
-				5BCCC11AC1E08D6009A4465BF6EFEEC1 /* UserModel.swift */,
+				5BCCC11AC1E08D6009A4465BF6EFEEC1 /* DBUserModel.swift */,
 				9FA6E82C1FB1362AFA76630E8524103B /* Pod */,
 				412E33EC1E17AB8423C7C0FDFDE3529B /* Support Files */,
 			);
@@ -1485,7 +1469,6 @@
 				5A17CBF9498858914F62C414CF35F409 /* Validation.swift */,
 				4C0C59D63A0F007A6CC91FA057BF804F /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1873,21 +1856,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53DA19519ED049C1B0E9D4E6CF53B0FA /* DBAccessToken.swift in Sources */,
 				35CE277C3576B563108F600F6CB9BDB1 /* DBBech32.swift in Sources */,
 				7230030AA69145E5883A3DA87E7E47BF /* DBChainKit.swift in Sources */,
 				37D0D1899F4A7C71CB3DBA4CE91DAA20 /* DBChainKit-dummy.m in Sources */,
 				19C35842117CCF67940F425B46F366A4 /* DBGCDTimer.swift in Sources */,
-				C38516C1A768EE277414D0C52BFF6DEE /* DBInsertData.swift in Sources */,
-				A02C5F3B6737C097085EB360FFD0D0A1 /* DBMnemonicManager.swift in Sources */,
-				3BBCC0CDDCAB3973C2C4D5B4A7122BBC /* DBQueryData.swift in Sources */,
-				45C670080DCE776003EE61442F536E84 /* DBRequest.swift in Sources */,
-				2128DA3E4F8D77DA5AF4598F2D39D569 /* DBRequestCollection.swift in Sources */,
+				C38516C1A768EE277414D0C52BFF6DEE /* DBInsertRequest.swift in Sources */,
+				3BBCC0CDDCAB3973C2C4D5B4A7122BBC /* DBParamSigner.swift in Sources */,
+				45C670080DCE776003EE61442F536E84 /* DBBaseRequest.swift in Sources */,
 				B1AED0D1F7087CBAADD11F3AD334C464 /* DictionaryExtension.swift in Sources */,
-				93DB9042C547ACBF919E13D92E304658 /* InsertModel.swift in Sources */,
 				28731158EAA91B0693691D22B673CDCB /* SegwitAddrCoder.swift in Sources */,
 				942ADA09E9E90E9F4BC6531FC943E4B1 /* Signer.swift in Sources */,
-				8EC4E821A5DB538CE686218CB884E151 /* UserModel.swift in Sources */,
+				8EC4E821A5DB538CE686218CB884E151 /* DBUserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

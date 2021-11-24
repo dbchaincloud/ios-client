@@ -7,5 +7,7 @@ target 'DBChainKitDemo' do
   # Pods for DBChainKitDemo
 	pod 'DBChainKit', :path => '../'
 
+#  pod 'DBChainKit/Sm2'
+#  pod 'DBChainKit/secp256k1'
   
 end

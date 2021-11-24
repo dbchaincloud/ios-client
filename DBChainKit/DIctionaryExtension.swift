@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: 字典转字符串
 
-extension Dictionary{
+extension Dictionary {
 
     public func convertDictionaryToJSONString(dict:NSDictionary?)->String {
         let data = try? JSONSerialization.data(withJSONObject: dict!, options: JSONSerialization.WritingOptions.init(rawValue: 0))
@@ -17,12 +17,12 @@ extension Dictionary{
         return jsonStr! as String
     }
 
-    public func dicValueString(_ dic:[String : Any]) -> String?{
+    public func dicValueString() -> String? {
         var jsonData = Data()
         var jsonStr = String()
         do {
             if #available(iOS 11.0, *) {
-                jsonData = try JSONSerialization.data(withJSONObject: dic, options: .sortedKeys)
+                jsonData = try JSONSerialization.data(withJSONObject: self, options: .sortedKeys)
             } else {
                 // Fallback on earlier versions
             }
@@ -237,6 +237,32 @@ extension String {
          let trimmedStr = self.trimmingCharacters(in: .whitespacesAndNewlines)
          return trimmedStr.isEmpty
      }
+    
+    var isjsonStyle: Bool {
+        let data = self.data(using: .utf8)
+        do {
+            try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+            return true
+        } catch {
+            return false
+        }
+    }
+
+
+    func toDictionary() -> [String : Any] {
+        var result = [String : Any]()
+        guard !self.isEmpty else { return result }
+
+        guard let dataSelf = self.data(using: .utf8) else {
+            return result
+        }
+
+        if let dic = try? JSONSerialization.jsonObject(with: dataSelf,
+                                                       options: .mutableContainers) as? [String : Any] {
+            result = dic
+        }
+        return result
+    }
 }
 
 
