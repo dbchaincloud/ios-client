@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SawtoothSigning
+//import SawtoothSigning
 import CommonCrypto
 import secp256k1
 import CryptoSwift

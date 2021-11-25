@@ -1,6 +1,0 @@
-framework module SawtoothSigning {
-  umbrella header "SawtoothSigning-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -5,8 +5,12 @@ target 'DBChainKit' do
   use_frameworks!
 
   # Pods for DBChainKit
-	pod 'SawtoothSigning', '~> 1.0.1'
+
+#	pod 'SawtoothSigning', '~> 1.0.1'
+
 	pod 'Alamofire'
   pod 'HDWalletSDK'
+
+  pod 'secp256k1.swift'
 
 end

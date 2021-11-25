@@ -27,6 +27,7 @@ public class DBUserModel:NSObject, Codable {
 
     struct publicData: Codable {
         var type: String
+
         var value: String
     }
 
