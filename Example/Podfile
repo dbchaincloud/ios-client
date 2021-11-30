@@ -5,7 +5,13 @@ target 'DBChainKitDemo' do
   use_frameworks!
 
   # Pods for DBChainKitDemo
-	pod 'DBChainKit', :path => '../'
+
+#  pod 'DBChainKit', :path => '../'
+
+   pod 'DBChainKit/sm2', :path => '../'
+
+#  pod 'DBChainKit/secp256k1', :path => '../'
+
 
 #  pod 'DBChainKit/Sm2'
 #  pod 'DBChainKit/secp256k1'

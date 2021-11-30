@@ -24,26 +24,47 @@
   "user_target_xcconfig": {
     "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "i386"
   },
-  "source_files": [
-    "DBChainKit",
-    "DBChainKit/**/*.{swift}"
-  ],
-  "exclude_files": "DBChainKit/**/*.h",
   "requires_arc": true,
   "static_framework": true,
   "module_name": "DBChainKit",
   "frameworks": "Security",
-  "dependencies": {
-    "SawtoothSigning": [
-
-    ],
-    "Alamofire": [
-
-    ],
-    "HDWalletSDK": [
-
-    ]
-  },
   "swift_versions": "5.0",
+  "subspecs": [
+    {
+      "name": "sm2",
+      "source_files": [
+        "DBChainKit/DBChainKit.swift",
+        "DBChainKit/main/*.{swift}",
+        "DBChainKit/sm2/*.{swift}"
+      ],
+      "dependencies": {
+        "Alamofire": [
+
+        ],
+        "HDWalletSDK": [
+
+        ],
+        "DBChainSm2": [
+
+        ]
+      }
+    },
+    {
+      "name": "secp256k1",
+      "source_files": [
+        "DBChainKit/DBChainKit.swift",
+        "DBChainKit/main/*.{swift}",
+        "DBChainKit/secp256k1/*.{swift}"
+      ],
+      "dependencies": {
+        "Alamofire": [
+
+        ],
+        "HDWalletSDK": [
+
+        ]
+      }
+    }
+  ],
   "swift_version": "5.0"
 }
