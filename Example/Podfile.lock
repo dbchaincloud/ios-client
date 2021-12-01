@@ -1,43 +1,32 @@
 PODS:
   - Alamofire (5.4.4)
   - CryptoSwift (1.4.2)
-  - DBChainKit/sm2 (1.0.4):
+  - DBChainKit/secp256k1 (2.0.0):
     - Alamofire
-    - DBChainSm2
     - HDWalletSDK
-  - DBChainSm2 (2.0.3):
-    - GMOpenSSL
-  - GMOpenSSL (2.2.6)
   - HDWalletSDK (1.2.0):
     - CryptoSwift (~> 1.4.2)
     - secp256k1.swift (~> 0.1.4)
   - secp256k1.swift (0.1.4)
 
 DEPENDENCIES:
-  - DBChainKit/sm2 (from `../`)
+  - DBChainKit/secp256k1
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - CryptoSwift
-    - DBChainSm2
-    - GMOpenSSL
+    - DBChainKit
     - HDWalletSDK
     - secp256k1.swift
-
-EXTERNAL SOURCES:
-  DBChainKit:
-    :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   CryptoSwift: a532e74ed010f8c95f611d00b8bbae42e9fe7c17
-  DBChainKit: 318f452e3093c3cf34342d31640ba21e1c5e7f05
-  DBChainSm2: 64c9be5f7ab889c389e1790cf427512647730bcc
-  GMOpenSSL: 9a58d4bbae233579275605fb65f7d92fb01f3c06
+  DBChainKit: 94f1a6620047314a2bb3eb90bd92d4167a051635
   HDWalletSDK: 1ef2cf954a5999e420e2735164b2c697be7445f4
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
 
-PODFILE CHECKSUM: f08449c37d2e0d757395b5cc47c4c77853c538f9
+PODFILE CHECKSUM: 389ce065ce005b7b41c1c96966f65ae47d230a11
 
 COCOAPODS: 1.11.2

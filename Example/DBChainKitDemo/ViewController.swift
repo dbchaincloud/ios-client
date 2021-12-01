@@ -51,7 +51,7 @@ import Alamofire
 let dbchain = DBChainKit.init(appcode: "5APTSCPSF7",
                               chainid: "testnet",
                               baseurl: "https://controlpanel.dbchain.cloud/relay/",
-                              encryptType: Sm2())
+                              encryptType: Secp256k1() )
 
 class ViewController: UIViewController {
 

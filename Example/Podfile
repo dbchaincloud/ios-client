@@ -1,4 +1,5 @@
 platform :ios, '10.0'
+install! 'cocoapods', :disable_input_output_paths => true
 
 target 'DBChainKitDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -8,12 +9,12 @@ target 'DBChainKitDemo' do
 
 #  pod 'DBChainKit', :path => '../'
 
-   pod 'DBChainKit/sm2', :path => '../'
+#   pod 'DBChainKit/sm2', :path => '../'
 
 #  pod 'DBChainKit/secp256k1', :path => '../'
 
 
-#  pod 'DBChainKit/Sm2'
-#  pod 'DBChainKit/secp256k1'
+#  pod 'DBChainKit/sm2'
+  pod 'DBChainKit/secp256k1'
   
 end
