@@ -11,11 +11,11 @@ import secp256k1
 import CryptoSwift
 import Alamofire
 import HDWalletSDK
+import Secp256k1Signing
 
 public class Secp256k1 : Compatible {
 
     public init() {}
-
 
     /// 获取token
     /// - Parameters:
@@ -61,7 +61,6 @@ public class Secp256k1 : Compatible {
         let strArr = [UInt8](signHex.utf8)
         do {
             let signData = try signSawtoothSigning(data: strArr, privateKey: privateKeyStr.hexaBytes)
-
             let signStr = signData.base64EncodedString()
             return signStr
             

@@ -10,35 +10,33 @@
 		811660632729438B0086665B /* DBChainKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811660622729438B0086665B /* DBChainKit.swift */; };
 		815E9B4A274F236700E48C95 /* DBBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E9B46274F236700E48C95 /* DBBaseRequest.swift */; };
 		815E9B4D274F236700E48C95 /* DBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E9B49274F236700E48C95 /* DBUserModel.swift */; };
-		815E9B65274F25EF00E48C95 /* SignerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E9B64274F25EF00E48C95 /* SignerError.swift */; };
 		816FDB6D272294DE0052BE39 /* DBGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816FDB62272294DE0052BE39 /* DBGCDTimer.swift */; };
 		816FDB71272294DE0052BE39 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816FDB66272294DE0052BE39 /* DictionaryExtension.swift */; };
-		816FDB72272294DE0052BE39 /* Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816FDB67272294DE0052BE39 /* Signer.swift */; };
-		816FDB73272294DE0052BE39 /* SegwitAddrCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816FDB68272294DE0052BE39 /* SegwitAddrCoder.swift */; };
-		816FDB74272294DE0052BE39 /* DBBech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816FDB69272294DE0052BE39 /* DBBech32.swift */; };
 		81A8471B2754AEB800935FF5 /* DBChainCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8471A2754AEB800935FF5 /* DBChainCompatible.swift */; };
+		81B0AE9827575C2F00F07D68 /* ChainType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0AE9727575C2F00F07D68 /* ChainType.swift */; };
+		81B0AEEA27577CD300F07D68 /* DBBech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0AEE827577CD300F07D68 /* DBBech32.swift */; };
+		81B0AEEB27577CD300F07D68 /* SegwitAddrCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0AEE927577CD300F07D68 /* SegwitAddrCoder.swift */; };
 		81EC23A0275080750006E60F /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC239F275080750006E60F /* Secp256k1.swift */; };
 		81EC23A3275083070006E60F /* Sm2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC23A2275083070006E60F /* Sm2.swift */; };
-		D3CF68A217EF8059CCDE730E /* libPods-DBChainKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9FFC19229E2A642DE4A131 /* libPods-DBChainKit.a */; };
+		DA7C5A8AC809D9AA47F499E1 /* Pods_DBChainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4737C005101B545AA4EA1249 /* Pods_DBChainKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4737C005101B545AA4EA1249 /* Pods_DBChainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DBChainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		581BE5A1CE66FA2D8818A434 /* Pods-DBChainKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBChainKit.debug.xcconfig"; path = "Target Support Files/Pods-DBChainKit/Pods-DBChainKit.debug.xcconfig"; sourceTree = "<group>"; };
 		811660622729438B0086665B /* DBChainKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBChainKit.swift; sourceTree = "<group>"; };
 		815E9B46274F236700E48C95 /* DBBaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBBaseRequest.swift; sourceTree = "<group>"; };
 		815E9B49274F236700E48C95 /* DBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUserModel.swift; sourceTree = "<group>"; };
-		815E9B64274F25EF00E48C95 /* SignerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignerError.swift; sourceTree = "<group>"; };
 		816FDB62272294DE0052BE39 /* DBGCDTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBGCDTimer.swift; sourceTree = "<group>"; };
 		816FDB66272294DE0052BE39 /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
-		816FDB67272294DE0052BE39 /* Signer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
-		816FDB68272294DE0052BE39 /* SegwitAddrCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegwitAddrCoder.swift; sourceTree = "<group>"; };
-		816FDB69272294DE0052BE39 /* DBBech32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBBech32.swift; sourceTree = "<group>"; };
 		81A8471A2754AEB800935FF5 /* DBChainCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBChainCompatible.swift; sourceTree = "<group>"; };
+		81B0AE9727575C2F00F07D68 /* ChainType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainType.swift; sourceTree = "<group>"; };
+		81B0AEE827577CD300F07D68 /* DBBech32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBBech32.swift; sourceTree = "<group>"; };
+		81B0AEE927577CD300F07D68 /* SegwitAddrCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegwitAddrCoder.swift; sourceTree = "<group>"; };
 		81C24C16272251B2005B1D11 /* DBChainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DBChainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C24C1A272251B2005B1D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81EC239F275080750006E60F /* Secp256k1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
 		81EC23A2275083070006E60F /* Sm2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sm2.swift; sourceTree = "<group>"; };
-		CD9FFC19229E2A642DE4A131 /* libPods-DBChainKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DBChainKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B8AF15CC4644485E7B2174 /* Pods-DBChainKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBChainKit.release.xcconfig"; path = "Target Support Files/Pods-DBChainKit/Pods-DBChainKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3CF68A217EF8059CCDE730E /* libPods-DBChainKit.a in Frameworks */,
+				DA7C5A8AC809D9AA47F499E1 /* Pods_DBChainKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +64,7 @@
 		5F18247BC692D75FF8290915 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD9FFC19229E2A642DE4A131 /* libPods-DBChainKit.a */,
+				4737C005101B545AA4EA1249 /* Pods_DBChainKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -74,15 +72,14 @@
 		815E9B6D274F2E3000E48C95 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				81B0AEE827577CD300F07D68 /* DBBech32.swift */,
+				81B0AEE927577CD300F07D68 /* SegwitAddrCoder.swift */,
+				81A8471A2754AEB800935FF5 /* DBChainCompatible.swift */,
 				815E9B46274F236700E48C95 /* DBBaseRequest.swift */,
 				816FDB66272294DE0052BE39 /* DictionaryExtension.swift */,
-				816FDB69272294DE0052BE39 /* DBBech32.swift */,
-				816FDB67272294DE0052BE39 /* Signer.swift */,
-				815E9B64274F25EF00E48C95 /* SignerError.swift */,
-				816FDB68272294DE0052BE39 /* SegwitAddrCoder.swift */,
 				815E9B49274F236700E48C95 /* DBUserModel.swift */,
 				816FDB62272294DE0052BE39 /* DBGCDTimer.swift */,
-				81A8471A2754AEB800935FF5 /* DBChainCompatible.swift */,
+				81B0AE9727575C2F00F07D68 /* ChainType.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -238,17 +235,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				815E9B4D274F236700E48C95 /* DBUserModel.swift in Sources */,
-				816FDB74272294DE0052BE39 /* DBBech32.swift in Sources */,
 				81EC23A0275080750006E60F /* Secp256k1.swift in Sources */,
-				815E9B65274F25EF00E48C95 /* SignerError.swift in Sources */,
 				815E9B4A274F236700E48C95 /* DBBaseRequest.swift in Sources */,
-				816FDB72272294DE0052BE39 /* Signer.swift in Sources */,
 				816FDB71272294DE0052BE39 /* DictionaryExtension.swift in Sources */,
+				81B0AEEB27577CD300F07D68 /* SegwitAddrCoder.swift in Sources */,
+				81B0AEEA27577CD300F07D68 /* DBBech32.swift in Sources */,
 				81EC23A3275083070006E60F /* Sm2.swift in Sources */,
 				81A8471B2754AEB800935FF5 /* DBChainCompatible.swift in Sources */,
+				81B0AE9827575C2F00F07D68 /* ChainType.swift in Sources */,
 				811660632729438B0086665B /* DBChainKit.swift in Sources */,
 				816FDB6D272294DE0052BE39 /* DBGCDTimer.swift in Sources */,
-				816FDB73272294DE0052BE39 /* SegwitAddrCoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,7 +51,7 @@ import Alamofire
 let dbchain = DBChainKit.init(appcode: "5APTSCPSF7",
                               chainid: "testnet",
                               baseurl: "https://controlpanel.dbchain.cloud/relay/",
-                              encryptType: Secp256k1() )
+                              encryptType: Secp256k1())
 
 class ViewController: UIViewController {
 
@@ -78,6 +78,14 @@ class ViewController: UIViewController {
          _ = dbchain.generateToken(privatekey, publickey)
 
         print("助记词: \(mnemonic)\n私钥:\(privatekey)\n公钥:\(publickey)\n地址:\(dbchain.address!)\ntoken:\(dbchain.token!)")
+
+        print(dbchain.appcode,
+              dbchain.chainid,
+              dbchain.baseurl,
+              dbchain.privateKey,
+              dbchain.publicKey,
+              dbchain.address,
+              dbchain.token)
 
 //      获取积分 --- 查询
 //        dbchain.registerNewAccountNumber { (state, result) in

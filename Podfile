@@ -10,6 +10,7 @@ target 'DBChainKit' do
   pod 'Alamofire'
   pod 'HDWalletSDK'
 
+  pod 'Secp256k1Signing'
   pod 'DBChainSm2'
 
 end
