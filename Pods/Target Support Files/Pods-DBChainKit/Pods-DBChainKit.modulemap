@@ -1,6 +1,0 @@
-framework module Pods_DBChainKit {
-  umbrella header "Pods-DBChainKit-umbrella.h"
-
-  export *
-  module * { export * }
-}
