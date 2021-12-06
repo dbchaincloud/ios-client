@@ -186,6 +186,7 @@ extension DBChainKit {
             insertStateBlock( "BASEURL / Token  is empty")
             return
         }
+        self.signMsgArr.removeAll()
         /// 先获取用户信息
         getUserModel { (model) in
             let fieldStr = fields.dicValueString()
@@ -221,7 +222,7 @@ extension DBChainKit {
             trashcanStateBlock( "BASEURL / Token  is empty")
             return
         }
-
+        self.signMsgArr.removeAll()
         getUserModel { (model) in
             let valueDic:[String:Any] = ["app_code": self.appcode!,
                                          "owner": self.address!,
@@ -255,6 +256,7 @@ extension DBChainKit {
             insertStateBlock( "BASEURL / Appcode  is empty")
             return
         }
+        self.signMsgArr.removeAll()
         getUserModel { (model) in
             let signvalueDic:[String:Any] = ["app_code":self.appcode!,
                                              "owner":self.address!,
@@ -272,7 +274,6 @@ extension DBChainKit {
         }
     }
 
-
     /// 函数请求  多条数据打包格式
     /// - Parameters:
     ///   - appinfo: 基本信息
@@ -284,7 +285,7 @@ extension DBChainKit {
             insertStateBlock( "BASEURL / Appcode  is empty")
             return
         }
-
+        self.signMsgArr.removeAll()
         getUserModel { (model) in
             for (signStr,funtionName) in argumentsAndFunctionNames {
                 let signvalueDic:[String:Any] = ["app_code": self.appcode!,
@@ -326,6 +327,38 @@ extension DBChainKit {
         }
     }
 
+    /// 上传文件类型数据
+    /// - Parameters:
+    ///   - filename: 文件名称
+    ///   - fileData: 文件内容
+    ///   - uploadStateBlock: 成功返回该文件的 cid,  失败返回 faile
+    public func uploadfile( filename: String,
+                            fileData: Data,
+                            uploadStateBlock:@escaping(_ fileCid: String) -> Void ) {
+
+        guard self.privateKey != nil, self.publicKey != nil, self.appcode != nil else {
+            uploadStateBlock( "privateKey / publicKey / appcode is empty")
+            return
+        }
+        let headers : HTTPHeaders = ["Content-type": "multipart/form-data",
+                                     "Content-Disposition" : "form-data",
+                                     "Content-Type": "application/json;charset=utf-8"]
+        let url = self.baseurl! + "dbchain/upload/\(self.token!)/\(self.appcode!)"
+        AF.upload(multipartFormData: { MultipartFormData in
+            MultipartFormData.append(fileData, withName: "file", fileName: filename, mimeType: "application/octet-stream")
+        }, to: url,headers: headers).responseJSON { response in
+            if response.response?.statusCode == 200 {
+                let value = response.value as? Dictionary<String, Any>
+                if ((value?.keys.contains("result")) != nil) {
+                    uploadStateBlock(value!["result"] as! String)
+                } else {
+                    uploadStateBlock("File upload failed")
+                }
+            } else {
+                uploadStateBlock("File upload failed")
+            }
+        }
+    }
 }
 
 

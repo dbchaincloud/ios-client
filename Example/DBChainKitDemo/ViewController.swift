@@ -51,7 +51,7 @@ import Alamofire
 let dbchain = DBChainKit.init(appcode: "5APTSCPSF7",
                               chainid: "testnet",
                               baseurl: "https://controlpanel.dbchain.cloud/relay/",
-                              encryptType: Secp256k1())
+                              encryptType: Sm2())
 
 class ViewController: UIViewController {
 
@@ -118,16 +118,16 @@ class ViewController: UIViewController {
 
 
         /// 新增一条数据
-//        let dic = ["name":"测试DBChainSm2",
-//                   "age":"18",
-//                   "dbchain_key":dbchain.address!,
-//                   "sex":"0",
-//                   "status":"",
-//                   "photo":"",
-//                   "motto":""]
-//        dbchain.insertRow(tableName: "user", fields: dic) { (result) in
-//            print(result)
-//        }
+        let dic = ["name":"测试DBChainSm2",
+                   "age":"18",
+                   "dbchain_key":dbchain.address!,
+                   "sex":"0",
+                   "status":"",
+                   "photo":"",
+                   "motto":""]
+        dbchain.insertRow(tableName: "user", fields: dic) { (result) in
+            print(result)
+        }
 
 
 
